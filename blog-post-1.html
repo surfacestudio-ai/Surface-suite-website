@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Most Driveway Contractors Lose Jobs Before They Even Quote — Surface Suite</title>
+<meta name="description" content="Slow follow-up, missed surveys, and unprofessional quotes are costing driveway contractors work every week. Here's what's going wrong and how to fix it.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0A0B0E;
+  --ink2:#141519;
+  --surface:#FFFFFF;
+  --surface2:#F7F7F8;
+  --border:#E4E4E7;
+  --text:#18181B;
+  --text2:#52525B;
+  --text3:#A1A1AA;
+  --acc:#2563EB;
+  --acc2:#1D4ED8;
+  --green:#16A34A;
+  --green-pale:#F0FDF4;
+  --r3:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(10,11,14,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nlogo{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:#fff;text-decoration:none;letter-spacing:-.3px}
+.nlogo span{color:var(--acc)}
+.nav-back{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .12s}
+.nav-back:hover{color:#fff}
+.nav-cta{padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;color:#fff;background:var(--acc);border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;transition:all .15s}
+.nav-cta:hover{background:var(--acc2)}
+
+/* HERO */
+.blog-hero{padding:120px 0 64px;background:var(--ink);position:relative;overflow:hidden}
+.blog-hero::after{content:'';position:absolute;top:-40%;left:50%;width:600px;height:600px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(37,99,235,.15) 0%,transparent 65%);pointer-events:none}
+.w{max-width:740px;margin:0 auto;padding:0 24px}
+.w-wide{max-width:1080px;margin:0 auto;padding:0 24px}
+.blog-cat{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--acc);margin-bottom:20px}
+.blog-title{font-family:'Syne',sans-serif;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-1px;color:#fff;font-weight:700;margin-bottom:20px}
+.blog-meta{display:flex;align-items:center;gap:16px;font-size:13px;color:rgba(255,255,255,.4)}
+.blog-meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.2)}
+
+/* ARTICLE */
+.article{padding:64px 0 96px}
+.article p{font-size:17px;line-height:1.8;color:var(--text2);margin-bottom:24px}
+.article p:first-child{font-size:18px;color:var(--text);font-weight:500;line-height:1.75}
+.article h2{font-family:'Syne',sans-serif;font-size:24px;font-weight:700;color:var(--text);margin:48px 0 16px;letter-spacing:-.3px}
+.article h3{font-size:17px;font-weight:600;color:var(--text);margin:32px 0 12px}
+.article ul,.article ol{margin:0 0 24px 24px}
+.article li{font-size:16px;color:var(--text2);line-height:1.75;margin-bottom:8px}
+.article strong{color:var(--text);font-weight:600}
+.article a{color:var(--acc);text-decoration:none}
+.article a:hover{text-decoration:underline}
+
+/* CALLOUT */
+.callout{background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:var(--r3);padding:24px 28px;margin:32px 0}
+.callout p{margin:0;font-size:16px;color:var(--text2);line-height:1.7}
+.callout p strong{color:var(--text)}
+
+/* STAT STRIP */
+.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r3);overflow:hidden;margin:40px 0}
+.stat-item{background:var(--surface2);padding:24px 20px;text-align:center}
+.stat-n{font-family:'Syne',sans-serif;font-size:36px;font-weight:700;color:var(--acc);line-height:1;margin-bottom:6px}
+.stat-l{font-size:13px;color:var(--text3);line-height:1.4}
+
+/* CTA BLOCK */
+.cta-block{background:var(--ink);border-radius:16px;padding:48px 40px;text-align:center;margin:64px 0 0;position:relative;overflow:hidden}
+.cta-block::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(37,99,235,.2) 0%,transparent 70%);pointer-events:none}
+.cta-block h2{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:12px;position:relative;z-index:1}
+.cta-block p{font-size:16px;color:rgba(255,255,255,.5);margin-bottom:28px;position:relative;z-index:1}
+.cta-block a{display:inline-block;padding:14px 32px;background:var(--acc);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:all .15s;position:relative;z-index:1}
+.cta-block a:hover{background:var(--acc2);transform:translateY(-1px);box-shadow:0 8px 28px rgba(37,99,235,.4)}
+
+/* FOOTER */
+.blog-footer{padding:40px 0;border-top:1px solid var(--border);background:var(--surface2)}
+.blog-footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.blog-footer-brand{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text)}
+.blog-footer p{font-size:13px;color:var(--text3)}
+
+@media(max-width:580px){
+  .blog-title{font-size:28px}
+  .article p{font-size:16px}
+  .stat-strip{grid-template-columns:1fr}
+  .cta-block{padding:32px 24px}
+  .blog-footer-inner{flex-direction:column;text-align:center}
+  #nav{padding:0 16px}
+  .w{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nlogo" href="index.html">Surface<span>Suite</span></a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to home
+  </a>
+  <a class="nav-cta" href="index.html#contact">Get early access</a>
+</nav>
+
+<section class="blog-hero">
+  <div class="w">
+    <div class="blog-cat">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.4"/><path d="M6 4v2.5L7.5 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Business advice
+    </div>
+    <h1 class="blog-title">Why Most Driveway Contractors<br>Lose Jobs Before They Even Quote</h1>
+    <div class="blog-meta">
+      <span>Surface Suite</span>
+      <span class="blog-meta-dot"></span>
+      <span>5 min read</span>
+    </div>
+  </div>
+</section>
+
+<article class="article">
+  <div class="w">
+
+    <p>You're good at the work. Resin, block paving, tarmac — you know your trade inside out. But there's a gap between a customer making an enquiry and you getting paid, and a lot of jobs are falling into it before you've even had a chance to quote.</p>
+
+    <p>It's not always obvious where they're going. The customer seemed interested. You said you'd be in touch. Then nothing. The job went to someone else and you never really knew why.</p>
+
+    <p>Here's what's actually happening — and what you can do about it.</p>
+
+    <h2>Speed matters more than you think</h2>
+
+    <p>When someone enquires about a new driveway, they're not just asking you. They've probably sent the same message to two or three other contractors at the same time. Whoever responds first — and responds professionally — gets a head start that's very hard for the others to recover from.</p>
+
+    <p>Studies consistently show that responding to a lead within an hour makes you <strong>seven times more likely to have a meaningful conversation</strong> than if you respond a few hours later. By the next day, most customers have already moved on mentally — even if they haven't technically committed to anyone yet.</p>
+
+    <p>The problem is that most driveway contractors are busy on site all day. The enquiry comes in at 10am, you see it at 5pm, you reply at 7pm. By then, the customer has already spoken to someone else and got a rough price. You're playing catch-up before you've even started.</p>
+
+    <div class="callout">
+      <p><strong>The fix:</strong> Even a quick reply — "Thanks for getting in touch, I'll call you tomorrow morning to arrange a visit" — is enough to hold the lead. It shows you're responsive and professional. A template message you can send in 30 seconds is worth more than a perfect reply you send 8 hours later.</p>
+    </div>
+
+    <h2>Missed surveys are killing your conversion rate</h2>
+
+    <p>Once you've agreed to visit, the next place jobs get lost is the survey itself. Not because contractors don't show up — most do — but because the process around it is so unreliable.</p>
+
+    <p>The visit gets booked over WhatsApp. There's no confirmation sent to the customer. No reminder the day before. The contractor is relying on memory. The customer isn't sure if it's still happening. One or both of them forgets, or gets the time wrong, and the whole thing falls apart.</p>
+
+    <p>A missed survey isn't just an inconvenience. It's a signal to the customer that you're disorganised. Even if you rearrange, you've already lost some of their confidence — and you're now competing against contractors who showed up when they said they would.</p>
+
+    <div class="stat-strip">
+      <div class="stat-item">
+        <div class="stat-n">1 in 4</div>
+        <div class="stat-l">survey bookings never result in a quote being sent</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">7×</div>
+        <div class="stat-l">more likely to convert leads contacted within the hour</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">68%</div>
+        <div class="stat-l">of customers choose based on responsiveness, not price alone</div>
+      </div>
+    </div>
+
+    <h2>Your quote might be losing you work on its own</h2>
+
+    <p>Let's say you did respond quickly. You showed up to the survey. Now you need to send a quote. This is where a lot of driveway contractors quietly lose jobs they should be winning.</p>
+
+    <p>A quote scribbled on a notepad and photographed. A rough figure sent by text message. A Word document with inconsistent formatting. A PDF with no logo, no company details, no breakdown of what's included.</p>
+
+    <p>Customers are spending thousands of pounds on their driveways. They're nervous about getting it wrong. A professional, itemised quote — with your logo, your contact details, a clear breakdown of materials and labour, and a proper total — does more than just tell them the price. It tells them you're the kind of contractor who has their act together. It builds confidence before you've even spoken to them again.</p>
+
+    <p>Meanwhile, the contractor down the road sent a branded PDF within 24 hours of the survey. Same price, same quality of work — but they look more established, more reliable, more trustworthy. That's who gets the job.</p>
+
+    <div class="callout">
+      <p><strong>The fix:</strong> Your quote is a sales document, not just a price. Every quote you send should have your logo, a clear line-item breakdown, your payment terms, and a professional layout. It doesn't need to take hours — once you've got a template and your standard rates saved, a quote should take minutes to produce.</p>
+    </div>
+
+    <h2>The follow-up that never happens</h2>
+
+    <p>You sent the quote. You haven't heard back. What do you do?</p>
+
+    <p>Most contractors do nothing. They assume if the customer was interested they'd get in touch. So the quote sits in the customer's inbox, they forget about it, life gets in the way, and the job quietly dies.</p>
+
+    <p>A single follow-up message — sent two or three days after the quote — can recover a significant number of these jobs. Not a pushy sales call. Just a simple check-in: "Just wanted to make sure you received the quote okay — happy to answer any questions."</p>
+
+    <p>Most contractors know they should be doing this. Almost none of them actually do, because there's no system to remind them. The jobs that needed following up get buried under new enquiries and the day-to-day chaos of running a business.</p>
+
+    <h2>The pattern is the same every time</h2>
+
+    <p>Slow response. Missed survey. Unprofessional quote. No follow-up. Each one on its own might not lose you the job. Together, they add up to a conversion rate that's far lower than it should be.</p>
+
+    <p>The contractors who win the most work aren't necessarily the cheapest or even the best. They're the ones who are easy to deal with. They reply quickly, they turn up when they say they will, they send a proper quote promptly, and they follow up. That's it.</p>
+
+    <p>None of that is complicated. But when you're running a business on WhatsApp threads and a spreadsheet, it's genuinely hard to do consistently. Things slip. Jobs get lost. You never quite know why.</p>
+
+    <p>That's the problem Surface Suite is built to solve — giving driveway contractors a simple system that handles the follow-ups, the reminders, the quotes and the invoices, so nothing falls through the cracks and more of your enquiries turn into paid work.</p>
+
+    <div class="cta-block">
+      <h2>Stop losing jobs before you've quoted</h2>
+      <p>Surface Suite is built specifically for driveway and surfacing contractors. Free to start, no card required.</p>
+      <a href="index.html#contact">Get early access — it's free</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="blog-footer">
+  <div class="w-wide">
+    <div class="blog-footer-inner">
+      <div class="blog-footer-brand">Surface Suite</div>
+      <p>The CRM built for UK driveway and surfacing contractors.</p>
+      <a href="index.html" style="font-size:13px;color:var(--acc);text-decoration:none">← Back to home</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
