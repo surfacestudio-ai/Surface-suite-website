@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — Surface Suite</title>
-<meta name="description" content="Practical advice for driveway and surfacing contractors. Quoting, invoicing, scheduling, and running a tighter business.">
+<title>Why Your Quote Is Losing You Work (And How to Fix It) — Surface Suite</title>
+<meta name="description" content="Presentation, speed, accuracy — most driveway contractors are losing jobs at the quote stage without realising it. Here's what's going wrong and how to fix it.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <style>
@@ -21,88 +21,117 @@
   --text3:#A1A1AA;
   --acc:#2563EB;
   --acc2:#1D4ED8;
+  --green:#16A34A;
+  --green-pale:#F0FDF4;
   --r3:12px;
-  --sh:0 1px 2px rgba(0,0,0,.05);
   --sh3:0 16px 40px rgba(0,0,0,.12);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
 
 /* NAV */
-#nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;padding:0 24px;gap:16px;background:rgba(10,11,14,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;padding:0 24px;gap:16px;background:rgba(10,11,14,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
 .nlogo{display:flex;align-items:center;cursor:pointer;flex-shrink:0;text-decoration:none}
 .nlogo img{height:34px;width:auto;object-fit:contain;max-width:160px}
 .nav-centre{display:flex;align-items:center;justify-content:center;gap:2px}
 .nlk{padding:6px 14px;border-radius:6px;font-size:14px;font-weight:500;color:rgba(255,255,255,.55);cursor:pointer;transition:all .12s;border:none;background:none;font-family:'Inter',sans-serif;text-decoration:none;display:inline-block}
 .nlk:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.07)}
 .nlk.on{color:#fff;background:rgba(255,255,255,.1)}
-.ncta{margin-left:8px;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;color:#fff;background:var(--acc);border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;letter-spacing:.01em;text-decoration:none}
+.ncta{padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;color:#fff;background:var(--acc);border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;text-decoration:none;display:inline-block}
 .ncta:hover{background:var(--acc2);transform:translateY(-1px);box-shadow:0 4px 16px rgba(37,99,235,.4)}
-.nav-right{display:flex;align-items:center;justify-content:flex-end;gap:8px}
-.nlogin{padding:7px 14px;border-radius:6px;font-size:13px;font-weight:500;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.14);background:transparent;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.nav-right{display:flex;align-items:center;justify-content:flex-end}
+.nlogin{padding:7px 14px;border-radius:6px;font-size:13px;font-weight:500;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.14);background:transparent;font-family:'Inter',sans-serif;transition:all .15s;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
 .nlogin:hover{color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.07)}
-.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;cursor:pointer;gap:5px;border:none;background:none;padding:0;border-radius:6px;transition:background .12s}
-.hamburger:hover{background:rgba(255,255,255,.08)}
+.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;cursor:pointer;gap:5px;border:none;background:none;padding:0;border-radius:6px}
 .hamburger span{display:block;width:20px;height:1.5px;background:rgba(255,255,255,.7);border-radius:2px;transition:all .25s}
-#mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;z-index:899;background:rgba(10,11,14,.97);backdrop-filter:blur(20px);flex-direction:column;padding:20px 24px;overflow-y:auto;border-top:1px solid rgba(255,255,255,.08)}
+#mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;z-index:899;background:rgba(10,11,14,.97);backdrop-filter:blur(20px);flex-direction:column;padding:20px 24px;border-top:1px solid rgba(255,255,255,.08)}
 #mobile-menu.open{display:flex}
-.mob-nlk{padding:16px 0;font-size:16px;font-weight:500;color:rgba(255,255,255,.55);cursor:pointer;border:none;background:none;font-family:'Inter',sans-serif;text-align:left;border-bottom:1px solid rgba(255,255,255,.07);width:100%;transition:color .12s;text-decoration:none;display:block}
+.mob-nlk{padding:16px 0;font-size:16px;font-weight:500;color:rgba(255,255,255,.55);border:none;background:none;font-family:'Inter',sans-serif;text-align:left;border-bottom:1px solid rgba(255,255,255,.07);width:100%;transition:color .12s;text-decoration:none;display:block}
 .mob-nlk:hover{color:#fff}
-.mob-cta{margin-top:20px;padding:14px;border-radius:8px;font-size:15px;font-weight:600;color:#fff;background:var(--acc);border:none;cursor:pointer;font-family:'Inter',sans-serif;width:100%;text-align:center}
+.mob-cta{margin-top:20px;padding:14px;border-radius:8px;font-size:15px;font-weight:600;color:#fff;background:var(--acc);border:none;cursor:pointer;font-family:'Inter',sans-serif;width:100%}
 @media(max-width:760px){.nav-centre,.nav-right{display:none}.hamburger{display:flex}#nav{grid-template-columns:auto 1fr auto;padding:0 20px}}
+
 
 /* HERO */
 .blog-hero{padding:120px 0 64px;background:var(--ink);position:relative;overflow:hidden}
 .blog-hero::after{content:'';position:absolute;top:-40%;left:50%;width:600px;height:600px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(37,99,235,.15) 0%,transparent 65%);pointer-events:none}
-.w{max-width:1080px;margin:0 auto;padding:0 24px}
-.eyebrow{font-size:11px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--acc);margin-bottom:14px;display:block}
-.page-title{font-family:'Syne',sans-serif;font-size:clamp(32px,4vw,52px);line-height:1.06;letter-spacing:-1.2px;color:#fff;font-weight:700;margin-bottom:16px}
-.page-lead{font-size:17px;color:rgba(255,255,255,.5);max-width:480px;line-height:1.7}
+.w{max-width:740px;margin:0 auto;padding:0 24px}
+.w-wide{max-width:1080px;margin:0 auto;padding:0 24px}
+.blog-cat{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--acc);margin-bottom:20px}
+.blog-title{font-family:'Syne',sans-serif;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-1px;color:#fff;font-weight:700;margin-bottom:20px}
+.blog-meta{display:flex;align-items:center;gap:16px;font-size:13px;color:rgba(255,255,255,.4)}
+.blog-meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.2)}
 
-/* BLOG GRID */
-.blog-section{padding:72px 0 96px}
-.blog-main-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
-.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r3);padding:28px 24px;text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:all .18s}
-.blog-card:hover{transform:translateY(-3px);box-shadow:var(--sh3);border-color:var(--border2)}
-.blog-card.featured{grid-column:span 3;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding:36px 32px}
-.blog-card-cat{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--acc)}
-.blog-card-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--text);line-height:1.3;letter-spacing:-.2px}
-.blog-card.featured .blog-card-title{font-size:26px;letter-spacing:-.5px;line-height:1.2}
-.blog-card-desc{font-size:13.5px;color:var(--text2);line-height:1.65;flex:1}
-.blog-card.featured .blog-card-desc{font-size:15px}
-.blog-card-read{font-size:12px;font-weight:600;color:var(--acc);display:flex;align-items:center;gap:4px;margin-top:4px}
-.blog-card-meta{font-size:12px;color:var(--text3)}
-.blog-card.coming-soon{opacity:.45;pointer-events:none}
-.coming-soon-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--surface2);border:1px solid var(--border);color:var(--text3);padding:3px 8px;border-radius:20px}
+/* ARTICLE */
+.article{padding:64px 0 96px}
+.article p{font-size:17px;line-height:1.8;color:var(--text2);margin-bottom:24px}
+.article p:first-child{font-size:18px;color:var(--text);font-weight:500;line-height:1.75}
+.article h2{font-family:'Syne',sans-serif;font-size:24px;font-weight:700;color:var(--text);margin:48px 0 16px;letter-spacing:-.3px}
+.article ul{margin:0 0 24px 24px}
+.article li{font-size:16px;color:var(--text2);line-height:1.75;margin-bottom:8px}
+.article strong{color:var(--text);font-weight:600}
+.article a{color:var(--acc);text-decoration:none}
+.article a:hover{text-decoration:underline}
 
-/* DIVIDER */
-.section-divider{border:none;border-top:1px solid var(--border);margin:48px 0}
+/* CALLOUT */
+.callout{background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:var(--r3);padding:24px 28px;margin:32px 0}
+.callout p{margin:0;font-size:16px;color:var(--text2);line-height:1.7}
+.callout p strong{color:var(--text)}
+
+/* QUOTE COMPARISON */
+.quote-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.quote-box{border:1px solid var(--border);border-radius:var(--r3);overflow:hidden}
+.quote-box-head{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.quote-box-head.bad{background:#FEF2F2;color:#B91C1C}
+.quote-box-head.good{background:var(--green-pale);color:var(--green)}
+.quote-box-body{padding:18px 16px;font-size:13.5px;color:var(--text2);line-height:1.7}
+.quote-box-body p{margin-bottom:8px}
+.quote-box-body p:last-child{margin-bottom:0}
+
+/* CHECKLIST */
+.checklist{display:flex;flex-direction:column;gap:10px;margin:24px 0 32px}
+.check-item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r3)}
+.check-icon{width:20px;height:20px;border-radius:50%;background:var(--green-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.check-icon svg{width:10px;height:10px}
+.check-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px}
+.check-desc{font-size:13px;color:var(--text2);line-height:1.55}
+
+/* STAT STRIP */
+.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r3);overflow:hidden;margin:40px 0}
+.stat-item{background:var(--surface2);padding:24px 20px;text-align:center}
+.stat-n{font-family:'Syne',sans-serif;font-size:36px;font-weight:700;color:var(--acc);line-height:1;margin-bottom:6px}
+.stat-l{font-size:13px;color:var(--text3);line-height:1.4}
+
+/* CTA BLOCK */
+.cta-block{background:var(--ink);border-radius:16px;padding:48px 40px;text-align:center;margin:64px 0 0;position:relative;overflow:hidden}
+.cta-block::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(37,99,235,.2) 0%,transparent 70%);pointer-events:none}
+.cta-block h2{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:12px;position:relative;z-index:1}
+.cta-block p{font-size:16px;color:rgba(255,255,255,.5);margin-bottom:28px;position:relative;z-index:1}
+.cta-block a{display:inline-block;padding:14px 32px;background:var(--acc);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:all .15s;position:relative;z-index:1}
+.cta-block a:hover{background:var(--acc2);transform:translateY(-1px);box-shadow:0 8px 28px rgba(37,99,235,.4)}
+
+/* ALSO READ */
+.also-read{border-top:1px solid var(--border);padding-top:40px;margin-top:64px}
+.also-read-label{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--text3);margin-bottom:16px}
+.also-read-grid{display:flex;flex-direction:column;gap:10px}
+.also-read a{display:flex;align-items:center;gap:10px;text-decoration:none;padding:16px 20px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r3);transition:all .15s}
+.also-read a:hover{border-color:var(--border2);box-shadow:var(--sh3);transform:translateY(-1px)}
+.also-read-title{font-size:15px;font-weight:600;color:var(--text);line-height:1.3}
+.also-read-cat{font-size:11px;color:var(--text3);margin-top:2px}
 
 /* FOOTER */
-footer{padding:48px 0 28px;background:var(--ink);border-top:1px solid rgba(255,255,255,.07)}
-.fg-foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.fb p{font-size:13px;color:rgba(255,255,255,.35);margin-top:10px;line-height:1.6}
-.flogo span{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:#fff}
-.fc h5{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
-.fc a{display:block;font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;margin-bottom:10px;transition:color .12s;cursor:pointer}
-.fc a:hover{color:#fff}
-.fbot{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,.07);font-size:12px;color:rgba(255,255,255,.2)}
-.fbot a{color:rgba(255,255,255,.2);text-decoration:none}
-.fbot a:hover{color:rgba(255,255,255,.5)}
+.blog-footer{padding:40px 0;border-top:1px solid var(--border);background:var(--surface2)}
+.blog-footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.blog-footer-brand{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text)}
+.blog-footer p{font-size:13px;color:var(--text3)}
 
-@media(max-width:960px){
-  .blog-main-grid{grid-template-columns:1fr 1fr}
-  .blog-card.featured{grid-column:span 2}
-  .fg-foot{grid-template-columns:1fr 1fr}
-}
 @media(max-width:580px){
-  .blog-hero{padding:96px 0 48px}
-  .blog-main-grid{grid-template-columns:1fr}
-  .blog-card.featured{grid-column:span 1;grid-template-columns:1fr}
-  .blog-section{padding:48px 0 64px}
-  .nav-links,.nav-login{display:none}
-  .fg-foot{grid-template-columns:1fr 1fr}
-  footer{padding:40px 0 24px}
+  .blog-title{font-size:28px}
+  .article p{font-size:16px}
+  .quote-compare{grid-template-columns:1fr}
+  .stat-strip{grid-template-columns:1fr}
+  .cta-block{padding:32px 24px}
+  .blog-footer-inner{flex-direction:column;text-align:center}
   .w{padding:0 16px}
 }
 </style>
@@ -124,7 +153,7 @@ footer{padding:48px 0 28px;background:var(--ink);border-top:1px solid rgba(255,2
 <div class="nav-right">
 <a class="nlogin" href="https://app.surface-suite.com/" target="_blank">Access your CRM →</a>
 </div>
-<button aria-label="Menu" class="hamburger" id="hamburger" onclick="document.getElementById('mobile-menu').classList.toggle('open');this.classList.toggle('open')">
+<button aria-label="Menu" class="hamburger" id="hamburger" onclick="this.classList.toggle('open');document.getElementById('mobile-menu').classList.toggle('open')">
 <span></span><span></span><span></span>
 </button>
 </nav>
@@ -134,97 +163,186 @@ footer{padding:48px 0 28px;background:var(--ink);border-top:1px solid rgba(255,2
 <a class="mob-nlk" href="index.html#pricing">Pricing</a>
 <a class="mob-nlk" href="index.html#contact">Contact</a>
 <a class="mob-nlk" href="blog.html">Blog</a>
-<a class="mob-cta" href="index.html#contact">Get early access — it's free</a>
+<button class="mob-cta" onclick="window.location='index.html#contact'">Get early access — it's free</button>
 </div>
 
 <section class="blog-hero">
   <div class="w">
-    <span class="eyebrow">The Surface Suite Blog</span>
-    <h1 class="page-title">Practical advice for<br>driveway contractors</h1>
-    <p class="page-lead">No fluff. Just useful guidance on quoting, getting paid, managing jobs, and running a tighter business.</p>
+    <div class="blog-cat">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1l1.5 3 3.3.5-2.4 2.3.6 3.2L6 8.5 3 10l.6-3.2L1.2 4.5l3.3-.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+      Sales
+    </div>
+    <h1 class="blog-title">Why Your Quote Is Losing<br>You Work (And How to Fix It)</h1>
+    <div class="blog-meta">
+      <span>Surface Suite</span>
+      <span class="blog-meta-dot"></span>
+      <span>5 min read</span>
+    </div>
   </div>
 </section>
 
-<section class="blog-section">
+<article class="article">
   <div class="w">
 
-    <div class="blog-main-grid">
+    <p>You've done the survey. You've measured up. You know the job and you know your price. But the quote goes out and you never hear back. The customer went with someone else and you're not sure why.</p>
 
-      <!-- Featured post -->
-      <a class="blog-card featured" href="blog-post-1.html">
+    <p>Most driveway contractors assume it was the price. Sometimes that's true. But more often the quote itself is the problem — not the number, but how it was presented, how quickly it was sent, and how much confidence it gave the customer that you were the right person for the job.</p>
+
+    <h2>The customer is making a judgement call</h2>
+
+    <p>When a customer gets two quotes for a new driveway, they're not just comparing prices. They're comparing two contractors. They're asking themselves: which of these people do I trust to spend several thousand pounds with? Which one looks like they run a proper business?</p>
+
+    <p>Your quote is often the first real piece of work the customer sees from you. The survey was a conversation. The quote is evidence. It either builds confidence or it undermines it.</p>
+
+    <div class="quote-compare">
+      <div class="quote-box">
+        <div class="quote-box-head bad">✕ Quote that loses work</div>
+        <div class="quote-box-body">
+          <p>Photo of a handwritten note or a rough figure sent by text message.</p>
+          <p>No breakdown of what's included. No company details. No logo.</p>
+          <p>Sent three days after the survey when the customer has already moved on.</p>
+        </div>
+      </div>
+      <div class="quote-box">
+        <div class="quote-box-head good">✓ Quote that wins work</div>
+        <div class="quote-box-body">
+          <p>Branded PDF with your logo, company name and contact details.</p>
+          <p>Clear line-item breakdown — groundwork, materials, labour, VAT.</p>
+          <p>Sent within 24 hours of the survey while the customer is still engaged.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Speed matters as much as presentation</h2>
+
+    <p>The window between a survey and a customer making their decision is shorter than most contractors think. By the time you get around to sending your quote three or four days later, there's a good chance the customer has already had a conversation with another contractor who got their quote in faster.</p>
+
+    <p>Even if both quotes arrive on the same day, the one that arrived first has already set a benchmark in the customer's mind. First mover advantage is real — and it's not about being cheapest, it's about being organised.</p>
+
+    <div class="stat-strip">
+      <div class="stat-item">
+        <div class="stat-n">24h</div>
+        <div class="stat-l">the window to send your quote before interest starts to drop</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">3×</div>
+        <div class="stat-l">more likely to win the job if you quote before competitors</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">60%</div>
+        <div class="stat-l">of customers say professionalism influences their decision as much as price</div>
+      </div>
+    </div>
+
+    <h2>What a winning quote looks like</h2>
+
+    <p>A quote that wins work isn't complicated. It doesn't need to be a ten-page document. But it does need to cover the basics consistently, every time.</p>
+
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div>
-          <div class="blog-card-cat">Business advice</div>
-          <div class="blog-card-title">Why Most Driveway Contractors Lose Jobs Before They Even Quote</div>
-          <div class="blog-card-desc">Slow follow-up, missed surveys, and unprofessional quotes are costing contractors work every single week. Here's what's going wrong and exactly how to fix it.</div>
-          <div class="blog-card-read">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="blog-card-meta" style="margin-top:12px">5 min read</div>
+          <div class="check-title">Your branding</div>
+          <div class="check-desc">Logo, company name, address, phone, email. Looks like it came from a real business.</div>
         </div>
-        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:28px 24px">
-          <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:16px">What this article covers</div>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text2)"><span style="color:var(--acc);font-weight:700;flex-shrink:0">✓</span>Why speed of response wins more jobs than price</div>
-            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text2)"><span style="color:var(--acc);font-weight:700;flex-shrink:0">✓</span>How missed surveys damage customer confidence</div>
-            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text2)"><span style="color:var(--acc);font-weight:700;flex-shrink:0">✓</span>Why your quote might be losing you work</div>
-            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text2)"><span style="color:var(--acc);font-weight:700;flex-shrink:0">✓</span>The follow-up most contractors never send</div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Coming soon posts -->
-      <a class="blog-card" href="blog-post-2.html">
-        <div class="blog-card-cat">Operations</div>
-        <div class="blog-card-title">The Hidden Cost of Running Your Business on WhatsApp</div>
-        <div class="blog-card-desc">Jobs falling through the cracks, no paper trail, no visibility of where anything stands.</div>
-        <div class="blog-card-read">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </a>
-
-      <a class="blog-card" href="blog-post-3.html">
-        <div class="blog-card-cat">Getting paid</div>
-        <div class="blog-card-title">How to Get Paid Faster on Every Driveway Job</div>
-        <div class="blog-card-desc">Deposit invoices, professional PDFs, and stopping the payment chase for good.</div>
-        <div class="blog-card-read">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </a>
-
-      <a class="blog-card" href="blog-post-5.html">
-        <div class="blog-card-cat">Sales</div>
-        <div class="blog-card-title">Why Your Quote Is Losing You Work (And How to Fix It)</div>
-        <div class="blog-card-desc">Presentation, speed, accuracy — the difference between winning and losing the job.</div>
-        <div class="blog-card-read">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </a>
-
-      <a class="blog-card" href="blog-post-4.html">
-        <div class="blog-card-cat">Operations</div>
-        <div class="blog-card-title">From Enquiry to Install: How a Job Pipeline Changes Everything</div>
-        <div class="blog-card-desc">The value of structure, visibility, and knowing exactly where every job stands.</div>
-        <div class="blog-card-read">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </a>
-
-      <div class="blog-card coming-soon">
-        <div class="blog-card-cat">Operations</div>
-        <div class="blog-card-title">The Driveway Contractor's Guide to Never Missing a Survey Again</div>
-        <div class="blog-card-desc">Reminders, scheduling, follow-ups — how to make sure every survey happens.</div>
-        <div class="coming-soon-badge">Coming soon</div>
       </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="check-title">Customer details</div>
+          <div class="check-desc">Their name and address. Personalised, not a generic template they can tell you didn't tailor.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="check-title">A clear scope of work</div>
+          <div class="check-desc">What's included — area, materials, depth, edging, prep work. No ambiguity about what they're getting.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="check-title">Line-item breakdown</div>
+          <div class="check-desc">Groundwork, materials, labour shown separately. Customers trust itemised quotes more than a single lump sum.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="check-title">VAT clearly shown</div>
+          <div class="check-desc">Whether you're VAT registered or not, make it explicit. Customers who are surprised by VAT at the end feel misled.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="check-title">Payment terms</div>
+          <div class="check-desc">Deposit amount, when the balance is due, and how to pay. No surprises later.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="check-title">Quote validity period</div>
+          <div class="check-desc">How long the price is valid for. Creates a gentle reason to make a decision rather than sitting on it indefinitely.</div>
+        </div>
+      </div>
+    </div>
 
+    <h2>The follow-up most contractors skip</h2>
+
+    <p>Sending a great quote is only half the job. The other half is following up when you don't hear back.</p>
+
+    <p>Most contractors send the quote and then wait. If the customer doesn't respond, they assume they weren't interested and move on. But in many cases the customer is still deciding — they're comparing quotes, they got busy, they meant to reply and forgot.</p>
+
+    <p>A single follow-up two or three days after the quote — "Just checking you received everything okay, happy to answer any questions" — is enough to win back a significant number of jobs that would otherwise go cold. It's not pushy. It's professional. And most of your competitors aren't doing it.</p>
+
+    <div class="callout">
+      <p><strong>The mindset shift:</strong> Following up isn't chasing. It's customer service. You're making it easy for someone who's interested but busy to re-engage with you. The contractors who follow up consistently convert more quotes — not because they're more aggressive, but because they're more present.</p>
+    </div>
+
+    <h2>Make quoting so easy you do it immediately</h2>
+
+    <p>The biggest reason quotes go out late isn't laziness — it's friction. Quoting manually takes time. You have to open a template, fill in the details, calculate the numbers, check the VAT, format the PDF, find the customer's email. By the time you've done all of that after a long day on site, it's easy to leave it until tomorrow.</p>
+
+    <p>When quoting takes two minutes instead of twenty, you do it on the same day as the survey. Your measurements pre-fill the quote. Your standard rates do the maths. You review it, hit send, and it's done. That's the difference between quoting while the customer is still thinking about you and quoting after they've already said yes to someone else.</p>
+
+    <div class="cta-block">
+      <h2>Quote faster, win more work</h2>
+      <p>Surface Suite builds accurate, branded quotes in minutes — sent by email or SMS before you leave site. Free to start, no card required.</p>
+      <a href="index.html#contact">Get early access — it's free</a>
+    </div>
+
+    <div class="also-read">
+      <div class="also-read-label">Also worth reading</div>
+      <div class="also-read-grid">
+        <a href="blog-post-1.html">
+          <div>
+            <div class="also-read-title">Why Most Driveway Contractors Lose Jobs Before They Even Quote</div>
+            <div class="also-read-cat">Business advice · 5 min read</div>
+          </div>
+          <svg style="margin-left:auto;flex-shrink:0" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="blog-post-3.html">
+          <div>
+            <div class="also-read-title">How to Get Paid Faster on Every Driveway Job</div>
+            <div class="also-read-cat">Getting paid · 5 min read</div>
+          </div>
+          <svg style="margin-left:auto;flex-shrink:0" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
     </div>
 
   </div>
-</section>
+</article>
 
-<footer>
-  <div class="w">
-    <div class="fg-foot">
-      <div class="fb">
-        <div class="flogo"><span>Surface Suite</span></div>
-        <p>The CRM built for UK driveway and surfacing contractors.</p>
-      </div>
-      <div class="fc"><h5>Product</h5><a href="index.html">Features</a><a href="index.html">Pricing</a></div>
-      <div class="fc"><h5>Company</h5><a href="index.html">Contact</a><a href="blog.html">Blog</a></div>
-      <div class="fc"><h5>Legal</h5><a>Privacy Policy</a><a>Terms of Service</a></div>
-    </div>
-    <div class="fbot">
-      <span>© 2026 Surface Suite Ltd. All rights reserved.</span>
-      <div style="display:flex;gap:14px"><a>Privacy</a><a>Terms</a></div>
+<footer class="blog-footer">
+  <div class="w-wide">
+    <div class="blog-footer-inner">
+      <div class="blog-footer-brand">Surface Suite</div>
+      <p>The CRM built for UK driveway and surfacing contractors.</p>
+      <a href="blog.html" style="font-size:13px;color:var(--acc);text-decoration:none">← All articles</a>
     </div>
   </div>
 </footer>
