@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Enquiry to Install: How a Job Pipeline Changes Everything — Surface Suite</title>
+<meta name="description" content="The value of structure and visibility. How a clear job pipeline helps driveway contractors win more work, deliver better and grow faster.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0A0B0E;
+  --ink2:#141519;
+  --surface:#FFFFFF;
+  --surface2:#F7F7F8;
+  --border:#E4E4E7;
+  --border2:#D4D4D8;
+  --text:#18181B;
+  --text2:#52525B;
+  --text3:#A1A1AA;
+  --acc:#2563EB;
+  --acc2:#1D4ED8;
+  --green:#16A34A;
+  --green-pale:#F0FDF4;
+  --r3:12px;
+  --sh3:0 16px 40px rgba(0,0,0,.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(10,11,14,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nlogo{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:#fff;text-decoration:none;letter-spacing:-.3px}
+.nlogo span{color:var(--acc)}
+.nav-back{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .12s}
+.nav-back:hover{color:#fff}
+.nav-cta{padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;color:#fff;background:var(--acc);border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;transition:all .15s}
+.nav-cta:hover{background:var(--acc2)}
+
+/* HERO */
+.blog-hero{padding:120px 0 64px;background:var(--ink);position:relative;overflow:hidden}
+.blog-hero::after{content:'';position:absolute;top:-40%;left:50%;width:600px;height:600px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(37,99,235,.15) 0%,transparent 65%);pointer-events:none}
+.w{max-width:740px;margin:0 auto;padding:0 24px}
+.w-wide{max-width:1080px;margin:0 auto;padding:0 24px}
+.blog-cat{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--acc);margin-bottom:20px}
+.blog-title{font-family:'Syne',sans-serif;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-1px;color:#fff;font-weight:700;margin-bottom:20px}
+.blog-meta{display:flex;align-items:center;gap:16px;font-size:13px;color:rgba(255,255,255,.4)}
+.blog-meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.2)}
+
+/* ARTICLE */
+.article{padding:64px 0 96px}
+.article p{font-size:17px;line-height:1.8;color:var(--text2);margin-bottom:24px}
+.article p:first-child{font-size:18px;color:var(--text);font-weight:500;line-height:1.75}
+.article h2{font-family:'Syne',sans-serif;font-size:24px;font-weight:700;color:var(--text);margin:48px 0 16px;letter-spacing:-.3px}
+.article ul,.article ol{margin:0 0 24px 24px}
+.article li{font-size:16px;color:var(--text2);line-height:1.75;margin-bottom:8px}
+.article strong{color:var(--text);font-weight:600}
+.article a{color:var(--acc);text-decoration:none}
+.article a:hover{text-decoration:underline}
+
+/* CALLOUT */
+.callout{background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:var(--r3);padding:24px 28px;margin:32px 0}
+.callout p{margin:0;font-size:16px;color:var(--text2);line-height:1.7}
+.callout p strong{color:var(--text)}
+
+/* PIPELINE */
+.pipeline{display:flex;flex-direction:column;gap:0;margin:32px 0;border:1px solid var(--border);border-radius:var(--r3);overflow:hidden}
+.pipeline-stage{display:flex;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid var(--border);background:var(--surface)}
+.pipeline-stage:last-child{border-bottom:none}
+.pipeline-stage:hover{background:var(--surface2)}
+.pipeline-num{width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Syne',sans-serif}
+.pipeline-name{font-size:14px;font-weight:600;color:var(--text);flex:1}
+.pipeline-desc{font-size:12.5px;color:var(--text3);text-align:right}
+
+/* BEFORE/AFTER */
+.ba-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.ba-col{border:1px solid var(--border);border-radius:var(--r3);overflow:hidden}
+.ba-head{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.ba-head.before{background:#FEF2F2;color:#B91C1C}
+.ba-head.after{background:var(--green-pale);color:var(--green)}
+.ba-body{padding:16px}
+.ba-item{display:flex;gap:8px;font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:10px}
+.ba-item:last-child{margin-bottom:0}
+.ba-icon{flex-shrink:0;margin-top:2px}
+
+/* CTA BLOCK */
+.cta-block{background:var(--ink);border-radius:16px;padding:48px 40px;text-align:center;margin:64px 0 0;position:relative;overflow:hidden}
+.cta-block::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(37,99,235,.2) 0%,transparent 70%);pointer-events:none}
+.cta-block h2{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:12px;position:relative;z-index:1}
+.cta-block p{font-size:16px;color:rgba(255,255,255,.5);margin-bottom:28px;position:relative;z-index:1}
+.cta-block a{display:inline-block;padding:14px 32px;background:var(--acc);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:all .15s;position:relative;z-index:1}
+.cta-block a:hover{background:var(--acc2);transform:translateY(-1px);box-shadow:0 8px 28px rgba(37,99,235,.4)}
+
+/* ALSO READ */
+.also-read{border-top:1px solid var(--border);padding-top:40px;margin-top:64px}
+.also-read-label{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--text3);margin-bottom:16px}
+.also-read-grid{display:flex;flex-direction:column;gap:10px}
+.also-read a{display:flex;align-items:center;gap:10px;text-decoration:none;padding:16px 20px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r3);transition:all .15s}
+.also-read a:hover{border-color:var(--border2);box-shadow:var(--sh3);transform:translateY(-1px)}
+.also-read-title{font-size:15px;font-weight:600;color:var(--text);line-height:1.3}
+.also-read-cat{font-size:11px;color:var(--text3);margin-top:2px}
+
+/* FOOTER */
+.blog-footer{padding:40px 0;border-top:1px solid var(--border);background:var(--surface2)}
+.blog-footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.blog-footer-brand{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text)}
+.blog-footer p{font-size:13px;color:var(--text3)}
+
+@media(max-width:580px){
+  .blog-title{font-size:28px}
+  .article p{font-size:16px}
+  .ba-compare{grid-template-columns:1fr}
+  .cta-block{padding:32px 24px}
+  .blog-footer-inner{flex-direction:column;text-align:center}
+  #nav{padding:0 16px}
+  .w{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nlogo" href="index.html">Surface<span>Suite</span></a>
+  <a class="nav-back" href="blog.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    All articles
+  </a>
+  <a class="nav-cta" href="index.html#contact">Get early access</a>
+</nav>
+
+<section class="blog-hero">
+  <div class="w">
+    <div class="blog-cat">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 5h10M5 5v6" stroke="currentColor" stroke-width="1.4"/></svg>
+      Operations
+    </div>
+    <h1 class="blog-title">From Enquiry to Install:<br>How a Job Pipeline Changes Everything</h1>
+    <div class="blog-meta">
+      <span>Surface Suite</span>
+      <span class="blog-meta-dot"></span>
+      <span>5 min read</span>
+    </div>
+  </div>
+</section>
+
+<article class="article">
+  <div class="w">
+
+    <p>Ask most driveway contractors how many live jobs they're currently managing and they'll give you a rough answer. Ask them how many are waiting on a quote, how many have paid a deposit, how many are ready to install — and you'll get a blank look.</p>
+
+    <p>That's not because they're not on top of things. It's because the information doesn't exist anywhere in a useful form. Jobs are managed by memory and gut feel, not by a system. And when you're running a business on gut feel, things inevitably fall through the cracks.</p>
+
+    <p>A job pipeline changes that. Here's what it is, why it matters, and what happens when you have one.</p>
+
+    <h2>What a job pipeline actually is</h2>
+
+    <p>A pipeline is simply a structured sequence of stages that every job moves through, from the moment an enquiry comes in to the moment you receive final payment. Instead of jobs existing as vague works-in-progress in your head, each one has a defined status and a clear next action.</p>
+
+    <p>For a driveway contractor, a typical pipeline looks something like this:</p>
+
+    <div class="pipeline">
+      <div class="pipeline-stage"><div class="pipeline-num">1</div><div class="pipeline-name">New enquiry</div><div class="pipeline-desc">Contact received</div></div>
+      <div class="pipeline-stage"><div class="pipeline-num">2</div><div class="pipeline-name">Survey booked</div><div class="pipeline-desc">Visit scheduled</div></div>
+      <div class="pipeline-stage"><div class="pipeline-num">3</div><div class="pipeline-name">Survey complete</div><div class="pipeline-desc">Measurements taken</div></div>
+      <div class="pipeline-stage"><div class="pipeline-num">4</div><div class="pipeline-name">Quote sent</div><div class="pipeline-desc">Awaiting response</div></div>
+      <div class="pipeline-stage"><div class="pipeline-num">5</div><div class="pipeline-name">Quote accepted</div><div class="pipeline-desc">Deposit invoice raised</div></div>
+      <div class="pipeline-stage"><div class="pipeline-num">6</div><div class="pipeline-name">Deposit paid</div><div class="pipeline-desc">Ready to schedule</div></div>
+      <div class="pipeline-stage"><div class="pipeline-num">7</div><div class="pipeline-name">Install scheduled</div><div class="pipeline-desc">Date confirmed</div></div>
+      <div class="pipeline-stage"><div class="pipeline-num">8</div><div class="pipeline-name">Install complete</div><div class="pipeline-desc">Final invoice sent</div></div>
+      <div class="pipeline-stage"><div class="pipeline-num">9</div><div class="pipeline-name">Paid in full</div><div class="pipeline-desc">Job closed</div></div>
+    </div>
+
+    <p>Every job sits in exactly one of these stages at any given time. You can see at a glance where everything is, what needs to happen next, and which jobs have been sitting in the same stage for too long.</p>
+
+    <h2>The difference it makes day to day</h2>
+
+    <p>Without a pipeline, your morning starts with trying to remember what needs doing. You open WhatsApp, scroll through threads, check your spreadsheet, try to recall which customers you were waiting to hear back from. By the time you've got a handle on everything, you've already lost 30 minutes.</p>
+
+    <p>With a pipeline, you open one screen and you know immediately. Three jobs in quote sent — one has been waiting five days, worth following up. Two jobs have deposits paid and are ready to schedule. One install is happening tomorrow and the customer needs a reminder.</p>
+
+    <div class="ba-compare">
+      <div class="ba-col">
+        <div class="ba-head before">✕ Without a pipeline</div>
+        <div class="ba-body">
+          <div class="ba-item"><span class="ba-icon">⚠️</span>Jobs managed by memory — things get forgotten</div>
+          <div class="ba-item"><span class="ba-icon">⚠️</span>No visibility of what needs attention today</div>
+          <div class="ba-item"><span class="ba-icon">⚠️</span>Quotes go cold because follow-up is missed</div>
+          <div class="ba-item"><span class="ba-icon">⚠️</span>Can't see at a glance how the business is doing</div>
+        </div>
+      </div>
+      <div class="ba-col">
+        <div class="ba-head after">✓ With a pipeline</div>
+        <div class="ba-body">
+          <div class="ba-item"><span class="ba-icon">✅</span>Every job has a status and a clear next action</div>
+          <div class="ba-item"><span class="ba-icon">✅</span>Instantly see what needs doing right now</div>
+          <div class="ba-item"><span class="ba-icon">✅</span>Follow-ups triggered automatically at the right time</div>
+          <div class="ba-item"><span class="ba-icon">✅</span>Real visibility of workload, revenue and progress</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>It stops jobs going cold</h2>
+
+    <p>One of the most valuable things a pipeline does is surface the jobs that need attention before it's too late. A quote that's been sitting unanswered for four days is easy to miss when it's buried in a WhatsApp thread. When it's flagged in your pipeline as "Quote sent — 4 days ago," you see it and you act.</p>
+
+    <p>Most quotes don't go cold because the customer wasn't interested. They go cold because life gets in the way, the customer got busy, and nobody followed up. A single message — "Just checking you received the quote okay — happy to answer any questions" — is often enough to restart the conversation and win the job.</p>
+
+    <div class="callout">
+      <p><strong>The compound effect:</strong> If you're converting 40% of quotes without following up, and following up consistently lifts that to 55%, the difference on 50 quotes a year at an average job value of £5,000 is an extra £37,500 in revenue. From sending a few extra messages.</p>
+    </div>
+
+    <h2>It gives you real visibility of your business</h2>
+
+    <p>When every job has a stage, you can start to see patterns that are invisible when jobs are scattered across WhatsApp and spreadsheets. How many enquiries are you getting each month? What's your quote-to-job conversion rate? Where are jobs most likely to drop out of the pipeline?</p>
+
+    <p>This isn't just interesting — it's useful. If you can see that you're getting plenty of enquiries but losing jobs at the quote stage, that tells you something specific needs fixing. If jobs are dropping out after the survey, that's a different problem with a different solution. Without pipeline visibility, you're guessing. With it, you're making decisions based on what's actually happening.</p>
+
+    <h2>It makes handing work to others much easier</h2>
+
+    <p>If you ever bring in help — an admin person, a second installer, anyone — a pipeline is what makes that possible without everything falling apart. When the job information exists in your head, no one else can pick it up. When it exists in a structured system, anyone can see exactly where each job is and what needs to happen next.</p>
+
+    <p>This is also true if you're ever ill, on holiday, or just having a hectic week. A pipeline means the business can keep moving even when you're not personally managing every detail.</p>
+
+    <h2>You already know what the stages are</h2>
+
+    <p>The stages of a driveway job aren't complicated — you go through them every time, whether or not you're tracking them. The pipeline just makes that process explicit and visible. It turns the knowledge that exists in your head into something structured that you can see, manage and act on.</p>
+
+    <p>The contractors who grow the fastest aren't the ones who work the hardest. They're the ones who can see clearly what's happening in their business and act on it consistently. A pipeline is what gives you that clarity.</p>
+
+    <div class="cta-block">
+      <h2>See every job clearly, every day</h2>
+      <p>Surface Suite gives every job a structured pipeline from enquiry to final payment. Free to start, no card required.</p>
+      <a href="index.html#contact">Get early access — it's free</a>
+    </div>
+
+    <div class="also-read">
+      <div class="also-read-label">Also worth reading</div>
+      <div class="also-read-grid">
+        <a href="blog-post-1.html">
+          <div>
+            <div class="also-read-title">Why Most Driveway Contractors Lose Jobs Before They Even Quote</div>
+            <div class="also-read-cat">Business advice · 5 min read</div>
+          </div>
+          <svg style="margin-left:auto;flex-shrink:0" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="blog-post-3.html">
+          <div>
+            <div class="also-read-title">How to Get Paid Faster on Every Driveway Job</div>
+            <div class="also-read-cat">Getting paid · 5 min read</div>
+          </div>
+          <svg style="margin-left:auto;flex-shrink:0" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<footer class="blog-footer">
+  <div class="w-wide">
+    <div class="blog-footer-inner">
+      <div class="blog-footer-brand">Surface Suite</div>
+      <p>The CRM built for UK driveway and surfacing contractors.</p>
+      <a href="blog.html" style="font-size:13px;color:var(--acc);text-decoration:none">← All articles</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
