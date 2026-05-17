@@ -1226,16 +1226,25 @@ function sub() {
 }
 </script>
 <script defer="" src="./Surface Suite — CRM for Surfacing Contractors_files/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7f7b0fd8732c4326aae4b9d58d5c514a&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous">
-var _ci=0,_ct=5,_ctimer;
-function gS(n){
-  var s=document.querySelectorAll('.cs'),d=document.querySelectorAll('.cd'),l=document.querySelectorAll('.cl');
-  _ci=(n+_ct)%_ct;
-  s.forEach(function(e,i){e.classList.toggle('active',i===_ci)});
-  d.forEach(function(e,i){e.classList.toggle('active',i===_ci)});
-  l.forEach(function(e,i){e.classList.toggle('active',i===_ci)});
-  clearInterval(_ctimer);
-  _ctimer=setInterval(function(){gS(_ci+1)},4500);
 }
 _ctimer=setInterval(function(){gS(_ci+1)},4500);
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebd1131ea0378f2',t:'MTc3NjExMDUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebd1131ea0378f2',t:'MTc3NjExMDUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())<script>
+(function(){
+  var ci=0, ct=5, timer;
+  function goSlide(n){
+    ci=(n+ct)%ct;
+    document.querySelectorAll('.cs').forEach(function(e,i){e.style.display=i===ci?'block':'none'});
+    document.querySelectorAll('.cd').forEach(function(e,i){e.classList.toggle('active',i===ci)});
+    document.querySelectorAll('.cl').forEach(function(e,i){e.classList.toggle('active',i===ci)});
+    clearInterval(timer);
+    timer=setInterval(function(){goSlide(ci+1)},4500);
+  }
+  window.gS=goSlide;
+  document.addEventListener('DOMContentLoaded',function(){
+    goSlide(0);
+    timer=setInterval(function(){goSlide(ci+1)},4500);
+  });
+})();
+</script>
+</body>
