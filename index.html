@@ -616,18 +616,13 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 </div>
 </section>
 
-<div id="lbx" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,.93);align-items:center;justify-content:center;padding:48px">
-<div style="width:100%;max-width:1100px;position:relative;box-sizing:border-box;z-index:1">
-<div class="lbi" id="lbi0" style="display:none"><img src="ss-dashboard.png" alt="Dashboard"></div>
-<div class="lbi" id="lbi1" style="display:none"><img src="ss-project.png" alt="Project view"></div>
-<div class="lbi" id="lbi2" style="display:none"><img src="ss-calendar.png" alt="Calendar"></div>
-<div class="lbi" id="lbi3" style="display:none"><img src="ss-quote.png" alt="Quote builder"></div>
-<div class="lbi" id="lbi4" style="display:none"><img src="ss-analytics.png" alt="Analytics"></div>
-</div>
-<button onclick="document.getElementById('lbx').style.display='none';document.body.style.overflow=''" style="position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:none;color:#fff;font-size:16px;cursor:pointer;z-index:100000">&#10005;</button>
+<div id="lbx" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,.93)">
+<img id="lbimg" src="" alt="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:90%;max-height:90vh;border-radius:8px;box-shadow:0 24px 64px rgba(0,0,0,.8)">
+<button onclick="document.getElementById('lbx').style.display='none';document.body.style.overflow=''" style="position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:none;color:#fff;font-size:18px;cursor:pointer;z-index:100000;line-height:1">&#10005;</button>
 <button id="lbprev" style="position:fixed;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;cursor:pointer;z-index:100000">&#8592;</button>
 <button id="lbnext" style="position:fixed;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;cursor:pointer;z-index:100000">&#8594;</button>
 </div>
+
 
 <!-- BEFORE / AFTER -->
 <section class="ba-section"><div class="w">
@@ -1222,19 +1217,17 @@ Document||a.contentWindow.document;if(b){var d=b.createElement('script');d.inner
 var _lbCur = 0;
 var _lbTotal = 5;
 
+var _srcs = ["ss-dashboard.png", "ss-project.png", "ss-calendar.png", "ss-quote.png", "ss-analytics.png"];
+
 function _lbShow(n) {
     _lbCur = ((n % _lbTotal) + _lbTotal) % _lbTotal;
-    for (var i = 0; i < _lbTotal; i++) {
-        var el = document.getElementById('lbi' + i);
-        if (el) el.style.display = (i === _lbCur) ? 'block' : 'none';
-    }
+    document.getElementById('lbimg').src = _srcs[_lbCur];
 }
 
 function _lbOpen(n) {
-    var lbx = document.getElementById('lbx');
-    lbx.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
     _lbShow(n);
+    document.getElementById('lbx').style.display = 'block';
+    document.body.style.overflow = 'hidden';
 }
 
 // Attach when DOM ready
