@@ -1274,11 +1274,11 @@ _ctimer=setInterval</script>
   var cur = 0;
   var total = 5;
   var captions = [
-    'Dashboard — Active jobs, pipeline &amp; revenue',
-    'Project view — Weather alerts &amp; progress tracking',
-    'Calendar — Surveys, installs &amp; weather',
+    'Dashboard — Active jobs, pipeline & revenue',
+    'Project view — Weather alerts & progress tracking',
+    'Calendar — Surveys, installs & weather',
     'Quote builder — Line-item quotes in minutes',
-    'Analytics — KPIs, conversion &amp; lead sources'
+    'Analytics — KPIs, conversion & lead sources'
   ];
 
   function show(n) {
@@ -1291,42 +1291,48 @@ _ctimer=setInterval</script>
     if (cap) cap.innerHTML = captions[cur];
   }
 
-  function open(n) {
+  function openLightbox(n) {
     show(n);
     document.getElementById('lbx').classList.add('on');
     document.body.style.overflow = 'hidden';
   }
 
-  function close() {
+  function closeLightbox() {
     document.getElementById('lbx').classList.remove('on');
     document.body.style.overflow = '';
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    // Attach thumb clicks
+  function init() {
     var thumbs = document.querySelectorAll('.sgt');
     for (var i = 0; i < thumbs.length; i++) {
-      (function(idx){ thumbs[idx].addEventListener('click', function(){ open(idx); }); })(i);
+      (function(idx){
+        thumbs[idx].addEventListener('click', function(e){
+          e.stopPropagation();
+          openLightbox(idx);
+        });
+      })(i);
     }
-    // Background click closes
     var bg = document.getElementById('lbxbg');
-    if (bg) bg.addEventListener('click', close);
-    // Close button
+    if (bg) bg.addEventListener('click', closeLightbox);
     var cl = document.getElementById('lbxclose');
-    if (cl) cl.addEventListener('click', close);
-    // Prev/next
+    if (cl) cl.addEventListener('click', closeLightbox);
     var pv = document.getElementById('lbxprev');
     var nx = document.getElementById('lbxnext');
-    if (pv) pv.addEventListener('click', function(){ show(cur - 1); });
-    if (nx) nx.addEventListener('click', function(){ show(cur + 1); });
-    // Keyboard
+    if (pv) pv.addEventListener('click', function(e){ e.stopPropagation(); show(cur - 1); });
+    if (nx) nx.addEventListener('click', function(e){ e.stopPropagation(); show(cur + 1); });
     document.addEventListener('keydown', function(e) {
       if (!document.getElementById('lbx').classList.contains('on')) return;
-      if (e.key === 'Escape') close();
+      if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') show(cur - 1);
       if (e.key === 'ArrowRight') show(cur + 1);
     });
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 </script>
 </body>
