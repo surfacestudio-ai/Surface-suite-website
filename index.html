@@ -574,8 +574,8 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 
 /* ── CSS LIGHTBOX ── */
 .lb-target{display:none;position:fixed;inset:0;z-index:99999}
-.lb-target:target{display:block}
-.lb-bg{position:fixed;inset:0;background:rgba(0,0,0,.92);display:block}
+.lb-target.open{display:block}
+.lb-bg{position:fixed;inset:0;background:rgba(0,0,0,.92);cursor:pointer}
 .lb-box{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);max-width:90vw;width:1100px;z-index:100000;text-align:center}
 .lb-box img{width:100%;height:auto;max-height:78vh;object-fit:contain;border-radius:8px;box-shadow:0 32px 80px rgba(0,0,0,.8);display:block;margin:0 auto}
 .lb-cap{margin-top:10px;font-size:13px;color:rgba(255,255,255,.5);font-family:"Inter",sans-serif}
@@ -655,85 +655,85 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 </div>
 <div class="sg-wrap">
 <div class="sg-grid">
-<a href="#lb0" class="sg-thumb">
+<div class="sg-thumb" style="cursor:pointer" data-lb="0">
 <div class="sg-img-wrap">
 <img src="ss-dashboard.png" alt="Dashboard" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Dashboard</strong><span>Active jobs, pipeline &amp; revenue</span></div>
-</a><a href="#lb1" class="sg-thumb">
+</a><div class="sg-thumb" style="cursor:pointer" data-lb="1">
 <div class="sg-img-wrap">
 <img src="ss-project.png" alt="Project overview" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Project overview</strong><span>Weather alerts &amp; progress tracking</span></div>
-</a><a href="#lb2" class="sg-thumb">
+</a><div class="sg-thumb" style="cursor:pointer" data-lb="2">
 <div class="sg-img-wrap">
 <img src="ss-calendar.png" alt="Calendar" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Calendar</strong><span>Surveys, installs &amp; weather</span></div>
-</a><a href="#lb3" class="sg-thumb">
+</a><div class="sg-thumb" style="cursor:pointer" data-lb="3">
 <div class="sg-img-wrap">
 <img src="ss-quote.png" alt="Quote builder" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Quote builder</strong><span>Line-item quotes in minutes</span></div>
-</a><a href="#lb4" class="sg-thumb">
+</a><div class="sg-thumb" style="cursor:pointer" data-lb="4">
 <div class="sg-img-wrap">
 <img src="ss-analytics.png" alt="Analytics" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Analytics</strong><span>KPIs, conversion &amp; lead sources</span></div>
-</a>
+</button>
 </div>
 </div>
 </section>
 
-<div id="lb0" class="lb-target">
-<a href="#!" class="lb-bg"></a>
+<div class="lb-target" style="display:none">
+<div class="lb-bg" onclick="closeLB()"></div>
 <div class="lb-box">
 <img src="ss-dashboard.png" alt="Dashboard">
 <div class="lb-cap"><strong>Dashboard</strong> — Active jobs, pipeline &amp; revenue</div>
-<a href="#!" class="lb-close-btn">✕</a>
-<a href="#lb4" class="lb-nav lb-prev">&#8592;</a>
-<a href="#lb1" class="lb-nav lb-next">&#8594;</a>
+<button class="lb-close-btn" onclick="closeLB()">✕</a>
+<button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8592;</button>
+<button class="lb-nav lb-next" onclick="lbNav(1)">&#8594;</button>
 </div>
-</div><div id="lb1" class="lb-target">
-<a href="#!" class="lb-bg"></a>
+</div><div class="lb-target" style="display:none">
+<div class="lb-bg" onclick="closeLB()"></div>
 <div class="lb-box">
 <img src="ss-project.png" alt="Project overview">
 <div class="lb-cap"><strong>Project overview</strong> — Weather alerts &amp; progress tracking</div>
-<a href="#!" class="lb-close-btn">✕</a>
-<a href="#lb0" class="lb-nav lb-prev">&#8592;</a>
-<a href="#lb2" class="lb-nav lb-next">&#8594;</a>
+<button class="lb-close-btn" onclick="closeLB()">✕</a>
+<button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8592;</button>
+<button class="lb-nav lb-next" onclick="lbNav(1)">&#8594;</button>
 </div>
-</div><div id="lb2" class="lb-target">
-<a href="#!" class="lb-bg"></a>
+</div><div class="lb-target" style="display:none">
+<div class="lb-bg" onclick="closeLB()"></div>
 <div class="lb-box">
 <img src="ss-calendar.png" alt="Calendar">
 <div class="lb-cap"><strong>Calendar</strong> — Surveys, installs &amp; weather</div>
-<a href="#!" class="lb-close-btn">✕</a>
-<a href="#lb1" class="lb-nav lb-prev">&#8592;</a>
-<a href="#lb3" class="lb-nav lb-next">&#8594;</a>
+<button class="lb-close-btn" onclick="closeLB()">✕</a>
+<button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8592;</button>
+<button class="lb-nav lb-next" onclick="lbNav(1)">&#8594;</button>
 </div>
-</div><div id="lb3" class="lb-target">
-<a href="#!" class="lb-bg"></a>
+</div><div class="lb-target" style="display:none">
+<div class="lb-bg" onclick="closeLB()"></div>
 <div class="lb-box">
 <img src="ss-quote.png" alt="Quote builder">
 <div class="lb-cap"><strong>Quote builder</strong> — Line-item quotes in minutes</div>
-<a href="#!" class="lb-close-btn">✕</a>
-<a href="#lb2" class="lb-nav lb-prev">&#8592;</a>
-<a href="#lb4" class="lb-nav lb-next">&#8594;</a>
+<button class="lb-close-btn" onclick="closeLB()">✕</a>
+<button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8592;</button>
+<button class="lb-nav lb-next" onclick="lbNav(1)">&#8594;</button>
 </div>
-</div><div id="lb4" class="lb-target">
-<a href="#!" class="lb-bg"></a>
+</div><div class="lb-target" style="display:none">
+<div class="lb-bg" onclick="closeLB()"></div>
 <div class="lb-box">
 <img src="ss-analytics.png" alt="Analytics">
 <div class="lb-cap"><strong>Analytics</strong> — KPIs, conversion &amp; lead sources</div>
-<a href="#!" class="lb-close-btn">✕</a>
-<a href="#lb3" class="lb-nav lb-prev">&#8592;</a>
-<a href="#lb0" class="lb-nav lb-next">&#8594;</a>
+<button class="lb-close-btn" onclick="closeLB()">✕</a>
+<button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8592;</button>
+<button class="lb-nav lb-next" onclick="lbNav(1)">&#8594;</button>
 </div>
 </div>
 <!-- BEFORE / AFTER -->
@@ -973,7 +973,7 @@ With Surface Suite
 <div class="blog-card-title">How to Get Paid Faster on Every Driveway Job</div>
 <div class="blog-card-desc">Deposit invoices, professional PDFs, and stopping the payment chase for good.</div>
 <div class="blog-card-read">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-</a>
+</button>
 </div>
 </div></section>
 <!-- CTA -->
@@ -1347,6 +1347,60 @@ _ctimer=setInterval</script>
   document.addEventListener('DOMContentLoaded',function(){
     goSlide(0);
     timer=setInterval(function(){goSlide(ci+1)},4500);
+  });
+})();
+</script>
+
+<script>
+(function() {
+  // Gallery lightbox
+  var current = 0;
+  var total = 5;
+
+  function showLB(n) {
+    // Hide all
+    var targets = document.querySelectorAll('.lb-target');
+    for (var i = 0; i < targets.length; i++) {
+      targets[i].classList.remove('open');
+      targets[i].style.display = 'none';
+    }
+    // Show selected
+    current = ((n % total) + total) % total;
+    targets[current].classList.add('open');
+    targets[current].style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  window.closeLB = function() {
+    var targets = document.querySelectorAll('.lb-target');
+    for (var i = 0; i < targets.length; i++) {
+      targets[i].classList.remove('open');
+      targets[i].style.display = 'none';
+    }
+    document.body.style.overflow = '';
+  };
+
+  window.lbNav = function(dir) {
+    showLB(current + dir);
+  };
+
+  // Attach click to thumbnails
+  document.addEventListener('DOMContentLoaded', function() {
+    var thumbs = document.querySelectorAll('[data-lb]');
+    for (var i = 0; i < thumbs.length; i++) {
+      (function(idx) {
+        thumbs[idx].addEventListener('click', function() { showLB(idx); });
+      })(i);
+    }
+  });
+
+  // Keyboard
+  document.addEventListener('keydown', function(e) {
+    var open = document.querySelector('.lb-target.open');
+    if (!open) return;
+    if (e.key === 'Escape') window.closeLB();
+    if (e.key === 'ArrowRight') window.lbNav(1);
+    if (e.key === 'ArrowLeft') window.lbNav(-1);
   });
 })();
 </script>
