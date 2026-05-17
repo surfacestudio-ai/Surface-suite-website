@@ -663,23 +663,23 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 </div>
 <div class="sgw">
   <div class="sgg">
-<div class="sgt" data-lb="0">
+<div class="sgt" data-lb="0" onclick="(function(){document.getElementById('lbx').classList.add('on');document.body.style.overflow='hidden';var items=document.querySelectorAll('.lbi');for(var i=0;i<items.length;i++){items[i].classList.toggle('on',i==0);}})();">
   <div class="sgt-img"><img src="ss-dashboard.png" alt="Dashboard" loading="lazy"><div class="sgt-ov"></div></div>
   <div class="sgt-lbl"><b>Dashboard</b><span>Active jobs, pipeline &amp; revenue</span></div>
 </div>
-<div class="sgt" data-lb="1">
+<div class="sgt" data-lb="1" onclick="(function(){document.getElementById('lbx').classList.add('on');document.body.style.overflow='hidden';var items=document.querySelectorAll('.lbi');for(var i=0;i<items.length;i++){items[i].classList.toggle('on',i==1);}})();">
   <div class="sgt-img"><img src="ss-project.png" alt="Project view" loading="lazy"><div class="sgt-ov"></div></div>
   <div class="sgt-lbl"><b>Project view</b><span>Weather alerts &amp; progress tracking</span></div>
 </div>
-<div class="sgt" data-lb="2">
+<div class="sgt" data-lb="2" onclick="(function(){document.getElementById('lbx').classList.add('on');document.body.style.overflow='hidden';var items=document.querySelectorAll('.lbi');for(var i=0;i<items.length;i++){items[i].classList.toggle('on',i==2);}})();">
   <div class="sgt-img"><img src="ss-calendar.png" alt="Calendar" loading="lazy"><div class="sgt-ov"></div></div>
   <div class="sgt-lbl"><b>Calendar</b><span>Surveys, installs &amp; weather</span></div>
 </div>
-<div class="sgt" data-lb="3">
+<div class="sgt" data-lb="3" onclick="(function(){document.getElementById('lbx').classList.add('on');document.body.style.overflow='hidden';var items=document.querySelectorAll('.lbi');for(var i=0;i<items.length;i++){items[i].classList.toggle('on',i==3);}})();">
   <div class="sgt-img"><img src="ss-quote.png" alt="Quote builder" loading="lazy"><div class="sgt-ov"></div></div>
   <div class="sgt-lbl"><b>Quote builder</b><span>Line-item quotes in minutes</span></div>
 </div>
-<div class="sgt" data-lb="4">
+<div class="sgt" data-lb="4" onclick="(function(){document.getElementById('lbx').classList.add('on');document.body.style.overflow='hidden';var items=document.querySelectorAll('.lbi');for(var i=0;i<items.length;i++){items[i].classList.toggle('on',i==4);}})();">
   <div class="sgt-img"><img src="ss-analytics.png" alt="Analytics" loading="lazy"><div class="sgt-ov"></div></div>
   <div class="sgt-lbl"><b>Analytics</b><span>KPIs, conversion &amp; lead sources</span></div>
 </div>
@@ -687,7 +687,7 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 </div>
 </section>
 
-<div id="lbx" aria-hidden="true">
+<div id="lbx">
   <div id="lbxbg"></div>
   <div id="lbxbox">
 <div class="lbi" data-i="0"><img src="ss-dashboard.png" alt="Dashboard"><p class="lbc"><b>Dashboard</b> — Active jobs, pipeline &amp; revenue</p></div>
