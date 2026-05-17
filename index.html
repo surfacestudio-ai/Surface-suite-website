@@ -4,7 +4,7 @@
 
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-
+<link href="./Surface Suite — CRM for Surfacing Contractors_files/css2" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -541,11 +541,8 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 .sgt-lbl{padding:8px 10px;background:#141720}
 .sgt-lbl b{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,.8);font-family:"Inter",sans-serif;margin-bottom:1px;font-style:normal}
 .sgt-lbl span{font-size:10px;color:rgba(255,255,255,.35);font-family:"Inter",sans-serif}
-.lbi img{width:100% !important;height:auto !important;max-height:82vh;object-fit:contain;border-radius:8px;display:block !important;margin:0 auto;visibility:visible !important}
 @media(max-width:960px){#sgg{grid-template-columns:repeat(3,1fr) !important}}
-@media(max-width:580px){#sgg{grid-template-columns:repeat(2,1fr) !important;gap:8px !important}#lbprev,#lbnext{display:none}}
-
-#lbx img{display:block !important;visibility:visible !important;opacity:1 !important;width:100% !important}
+@media(max-width:580px){#sgg{grid-template-columns:repeat(2,1fr) !important;gap:8px !important}#lbprev,#lbnext{display:none !important}}
 </style>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <title>Surface Suite — CRM Built for Driveway Contractors</title>
@@ -596,9 +593,9 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 <div class="pg on" id="pg-home">
 <!-- HERO -->
 <section class="hero" style="background:var(--ink);padding-top:96px;padding-bottom:0;display:flex;flex-direction:column;align-items:center">
-<div style="max-width:900px;text-align:center;padding:0 24px 48px;margin:0 auto">
+<div style="max-width:900px;width:100%;text-align:center;padding:0 24px 48px;margin:0 auto">
 <div class="hero-badge"><div class="hero-badge-dot"></div>Now in beta &middot; Built for UK surfacing contractors</div>
-<h1 class="h1" style="margin-bottom:20px;font-size:clamp(28px,4vw,56px)">Every job. Every quote. Every invoice.<br><em>One place.</em></h1>
+<h1 class="h1" style="margin-bottom:20px;font-size:clamp(24px,3.8vw,58px)">Every job. Every quote. Every invoice.<br><em>One place.</em></h1>
 <p class="lead lead-light" style="margin:0 auto 32px;max-width:560px">Surface Suite is the only CRM built for driveway and surfacing contractors. Quote faster, get paid sooner, and never miss a survey again.</p>
 <div class="hero-actions" style="justify-content:center;margin-bottom:48px">
 <button class="btn btn-blue" onclick="window.location='contact.html'">Join the waitlist <svg fill="none" height="14" viewBox="0 0 14 14" width="14"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg></button>
@@ -606,7 +603,7 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 </div>
 </div>
 <div style="width:100%;background:linear-gradient(to bottom,var(--ink) 40%,var(--surface2) 100%);padding:0 24px">
-<div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px" id="sgg">
+<div id="sgg" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px">
 <div class="sgt" data-idx="0" onclick="_lbOpen(0)"><div class="sgt-img"><img src="ss-dashboard.png" alt="Dashboard" loading="lazy"></div><div class="sgt-lbl"><b>Dashboard</b><span>Active jobs, pipeline &amp; revenue</span></div></div>
 <div class="sgt" data-idx="1" onclick="_lbOpen(1)"><div class="sgt-img"><img src="ss-project.png" alt="Project view" loading="lazy"></div><div class="sgt-lbl"><b>Project view</b><span>Weather alerts &amp; progress tracking</span></div></div>
 <div class="sgt" data-idx="2" onclick="_lbOpen(2)"><div class="sgt-img"><img src="ss-calendar.png" alt="Calendar" loading="lazy"></div><div class="sgt-lbl"><b>Calendar</b><span>Surveys, installs &amp; weather</span></div></div>
@@ -616,6 +613,13 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 </div>
 </section>
 
+<div id="lbx" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,.93)">
+<img id="lbimg" src="" alt="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:90%;max-height:90vh;border-radius:8px;box-shadow:0 24px 64px rgba(0,0,0,.8)">
+<button onclick="document.getElementById('lbx').style.display='none';document.body.style.overflow=''" style="position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:none;color:#fff;font-size:18px;cursor:pointer;z-index:100000;line-height:1">&#10005;</button>
+<button onclick="document.getElementById('lbx').style.display='none';document.body.style.overflow=''" style="position:fixed;inset:0;width:100%;height:100%;background:transparent;border:none;cursor:pointer;z-index:99998"></button>
+<button id="lbprev" onclick="_lbNav(-1)" style="position:fixed;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;cursor:pointer;z-index:100000">&#8592;</button>
+<button id="lbnext" onclick="_lbNav(1)" style="position:fixed;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;cursor:pointer;z-index:100000">&#8594;</button>
+</div>
 
 <!-- BEFORE / AFTER -->
 <section class="ba-section"><div class="w">
@@ -688,7 +692,7 @@ With Surface Suite
 <div class="feat-row">
 <div class="feat-copy">
 <span class="eyebrow">Quoting &amp; invoicing</span>
-<h2 class="h2 h2-light" style="color:#fff">From survey to<br>sent in <em>minutes</em></h2>
+<h2 class="h2" style="color:#fff">From survey to<br>sent in <em>minutes</em></h2>
 <p class="lead">Build line-itemised quotes from your saved materials, record measurements on site, and send a branded PDF — all without leaving the app.</p>
 <ul class="feat-list">
 <li><div class="ck"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"></polyline></svg></div>Quick-add line items for every surface type</li>
@@ -698,8 +702,8 @@ With Surface Suite
 </ul>
 <button class="btn btn-ghost" onclick="window.location='features.html'">See all features</button>
 </div>
-<div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r3);padding:28px 24px">
-<h4 style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;font-family:&#39;Syne&#39;,sans-serif">What you get</h4>
+<div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r3);padding:28px 24px">
+<h4 style="color:#fff;font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;font-family:&#39;Syne&#39;,sans-serif">What you get</h4>
 <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;margin:0;padding:0">
 <li style="display:flex;gap:10px;font-size:14px;color:var(--text2);line-height:1.6"><span style="color:var(--acc);font-weight:700;flex-shrink:0">✓</span>Itemised quote builder with saved materials &amp; rates</li>
 <li style="display:flex;gap:10px;font-size:14px;color:var(--text2);line-height:1.6"><span style="color:var(--acc);font-weight:700;flex-shrink:0">✓</span>On-site measurement recorder with area calculator</li>
@@ -769,8 +773,8 @@ With Surface Suite
 <section class="feat-section"><div class="w">
 <div class="feat-row">
 <div class="feat-copy">
-<span class="eyebrow" style="color:var(--acc)">Scheduling</span>
-<h2 class="h2 h2-light">Your whole month,<br><em>organised</em></h2>
+<span class="eyebrow">Scheduling</span>
+<h2 class="h2">Your whole month,<br><em>organised</em></h2>
 <p class="lead">See every survey, install, and follow-up on a single calendar. Syncs with Google Calendar, Apple Calendar, and Outlook automatically.</p>
 <ul class="feat-list">
 <li><div class="ck"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"></polyline></svg></div>Surveys and installs colour-coded by type</li>
@@ -782,7 +786,7 @@ With Surface Suite
 </div>
 <div style="display:flex;flex-direction:column;gap:10px">
 <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r3);padding:28px 24px">
-<h4 style="color:#fff" style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;font-family:&#39;Syne&#39;,sans-serif">Calendar features</h4>
+<h4 style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;font-family:&#39;Syne&#39;,sans-serif">Calendar features</h4>
 <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;margin:0;padding:0">
 <li style="display:flex;gap:10px;font-size:14px;color:var(--text2);line-height:1.6"><span style="color:var(--acc);font-weight:700;flex-shrink:0">✓</span>Simple scheduling for surveys &amp; installs</li>
 <li style="display:flex;gap:10px;font-size:14px;color:var(--text2);line-height:1.6"><span style="color:var(--acc);font-weight:700;flex-shrink:0">✓</span>Colour-coded job types at a glance</li>
@@ -799,8 +803,8 @@ With Surface Suite
 <section class="analytics-section"><div class="w">
 <div class="analytics-inner">
 <div>
-<span class="eyebrow" style="color:var(--acc)">Analytics</span>
-<h2 class="h2 h2-light">Know your numbers. <em>Always.</em></h2>
+<span class="eyebrow">Analytics</span>
+<h2 class="h2">Know your numbers. <em>Always.</em></h2>
 <p class="lead lead-light">Live KPIs, conversion funnel, win/loss ratio, and revenue charts. Know exactly how your business is performing at a glance.</p>
 <div class="ana-checks">
 <div class="ana-check"><div class="ck"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"></polyline></svg></div>73% quote conversion tracked automatically</div>
@@ -818,8 +822,8 @@ With Surface Suite
 </div></section>
 <!-- METRICS -->
 <div class="metrics metrics-dark"><div class="w">
-<span class="eyebrow" style="color:var(--acc)">By the numbers</span>
-<h2 class="h2 h2-light">Built around how surfacing<br>businesses <em>actually work</em></h2>
+<span class="eyebrow">By the numbers</span>
+<h2 class="h2">Built around how surfacing<br>businesses <em>actually work</em></h2>
 <div class="met-grid">
 <div class="met"><div class="met-n"><span>3</span>×</div><div class="met-l">Faster quoting</div><div class="met-s">Enquiry to PDF in under 2 minutes</div></div>
 <div class="met"><div class="met-n"><span>40</span>%</div><div class="met-l">Faster payment</div><div class="met-s">Professional invoices get paid sooner</div></div>
@@ -831,8 +835,8 @@ With Surface Suite
 <section class="blog-strip"><div class="w">
 <div class="blog-strip-head">
 <div>
-<span class="eyebrow" style="color:var(--acc)">From the blog</span>
-<h2 class="h2 h2-light">Advice for driveway contractors</h2>
+<span class="eyebrow">From the blog</span>
+<h2 class="h2">Advice for driveway contractors</h2>
 </div>
 <a class="blog-strip-link" href="blog.html">All articles <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
@@ -1113,7 +1117,7 @@ With Surface Suite
 </div></div></div>
 <footer><div class="fg-foot"><div class="fb"><div class="flogo"><span>Surface Suite</span></div><p>The CRM built for UK driveway and surfacing contractors.</p></div><div class="fc"><h5>Product</h5><a onclick="window.location='features.html'">Features</a><a onclick="window.location='pricing.html'">Pricing</a></div><div class="fc"><h5>Company</h5><a onclick="window.location='contact.html'">Contact</a></div><div class="fc"><h5>Legal</h5><a>Privacy Policy</a><a>Terms of Service</a></div></div><div class="fbot"><span>© 2026 Surface Suite Ltd.</span><div style="display:flex;gap:14px"><a>Privacy</a><a>Terms</a></div></div></footer>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function go(id) {
   document.querySelectorAll('.pg').forEach(function(p) { p.classList.remove('on'); });
   var p = document.getElementById('pg-' + id);
@@ -1204,54 +1208,5 @@ function sub() {
   });
 }
 </script>
-</script>
-Document||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebd1131ea0378f2',t:'MTc3NjExMDUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())
-
-<div id="lbx" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,.93)">
-<img id="lbimg" src="" alt="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:90%;max-height:90vh;border-radius:8px;box-shadow:0 24px 64px rgba(0,0,0,.8)">
-<button onclick="document.getElementById('lbx').style.display='none';document.body.style.overflow=''" style="position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:none;color:#fff;font-size:18px;cursor:pointer;z-index:100000;line-height:1">&#10005;</button>
-<button id="lbprev" style="position:fixed;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;cursor:pointer;z-index:100000">&#8592;</button>
-<button id="lbnext" style="position:fixed;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;cursor:pointer;z-index:100000">&#8594;</button>
-</div>
-
-
-<script>
-var _lbCur = 0;
-var _lbTotal = 5;
-
-var _srcs = ["ss-dashboard.png", "ss-project.png", "ss-calendar.png", "ss-quote.png", "ss-analytics.png"];
-
-function _lbShow(n) {
-    _lbCur = ((n % _lbTotal) + _lbTotal) % _lbTotal;
-    document.getElementById('lbimg').src = _srcs[_lbCur];
-}
-
-function _lbOpen(n) {
-    _lbShow(n);
-    document.getElementById('lbx').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
-
-// Attach when DOM ready
-window.addEventListener('load', function() {
-    var sgg = document.getElementById('sgg');
-    if (!sgg) return;
-    var thumbs = sgg.querySelectorAll('.sgt');
-    for (var i = 0; i < thumbs.length; i++) {
-        (function(idx) {
-            thumbs[idx].addEventListener('click', function() { _lbOpen(idx); });
-        })(i);
-    }
-    var lbprev = document.getElementById('lbprev');
-    var lbnext = document.getElementById('lbnext');
-    if (lbprev) lbprev.addEventListener('click', function(e) { e.stopPropagation(); _lbShow(_lbCur - 1); });
-    if (lbnext) lbnext.addEventListener('click', function(e) { e.stopPropagation(); _lbShow(_lbCur + 1); });
-    document.addEventListener('keydown', function(e) {
-        var lbx = document.getElementById('lbx');
-        if (lbx.style.display !== 'flex') return;
-        if (e.key === 'Escape') { lbx.style.display = 'none'; document.body.style.overflow = ''; }
-        if (e.key === 'ArrowRight') _lbShow(_lbCur + 1);
-        if (e.key === 'ArrowLeft') _lbShow(_lbCur - 1);
-    });
-});
-</script>
+<script defer="" src="./Surface Suite — CRM for Surfacing Contractors_files/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7f7b0fd8732c4326aae4b9d58d5c514a&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebd1131ea0378f2',t:'MTc3NjExMDUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())
