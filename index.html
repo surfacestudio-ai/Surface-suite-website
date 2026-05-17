@@ -4,7 +4,7 @@
 
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<link href="./Surface Suite — CRM for Surfacing Contractors_files/css2" rel="stylesheet">
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -542,9 +542,11 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 .sgt-lbl b{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,.8);font-family:"Inter",sans-serif;margin-bottom:1px;font-style:normal}
 .sgt-lbl span{font-size:10px;color:rgba(255,255,255,.35);font-family:"Inter",sans-serif}
 .lbi{display:none}
-.lbi img{width:100%;height:auto;max-height:82vh;object-fit:contain;border-radius:8px;display:block;margin:0 auto}
+.lbi img{width:100% !important;height:auto !important;max-height:82vh;object-fit:contain;border-radius:8px;display:block !important;margin:0 auto;visibility:visible !important}
 @media(max-width:960px){#sgg{grid-template-columns:repeat(3,1fr) !important}}
 @media(max-width:580px){#sgg{grid-template-columns:repeat(2,1fr) !important;gap:8px !important}#lbprev,#lbnext{display:none}}
+
+#lbx img{display:block !important;visibility:visible !important;opacity:1 !important;width:100% !important}
 </style>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <title>Surface Suite — CRM Built for Driveway Contractors</title>
@@ -606,17 +608,17 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 </div>
 <div style="width:100%;background:linear-gradient(to bottom,var(--ink) 40%,var(--surface2) 100%);padding:0 24px">
 <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px" id="sgg">
-<div class="sgt" data-idx="0" onclick="var lbx=document.getElementById('lbx');lbx.style.display='flex';document.body.style.overflow='hidden';for(var j=0;j<5;j++){var el=document.getElementById('lbi'+j);if(el)el.style.display=j===0?'block':'none'}"><div class="sgt-img"><img src="ss-dashboard.png" alt="Dashboard" loading="lazy"></div><div class="sgt-lbl"><b>Dashboard</b><span>Active jobs, pipeline &amp; revenue</span></div></div>
-<div class="sgt" data-idx="1" onclick="var lbx=document.getElementById('lbx');lbx.style.display='flex';document.body.style.overflow='hidden';for(var j=0;j<5;j++){var el=document.getElementById('lbi'+j);if(el)el.style.display=j===1?'block':'none'}"><div class="sgt-img"><img src="ss-project.png" alt="Project view" loading="lazy"></div><div class="sgt-lbl"><b>Project view</b><span>Weather alerts &amp; progress tracking</span></div></div>
-<div class="sgt" data-idx="2" onclick="var lbx=document.getElementById('lbx');lbx.style.display='flex';document.body.style.overflow='hidden';for(var j=0;j<5;j++){var el=document.getElementById('lbi'+j);if(el)el.style.display=j===2?'block':'none'}"><div class="sgt-img"><img src="ss-calendar.png" alt="Calendar" loading="lazy"></div><div class="sgt-lbl"><b>Calendar</b><span>Surveys, installs &amp; weather</span></div></div>
-<div class="sgt" data-idx="3" onclick="var lbx=document.getElementById('lbx');lbx.style.display='flex';document.body.style.overflow='hidden';for(var j=0;j<5;j++){var el=document.getElementById('lbi'+j);if(el)el.style.display=j===3?'block':'none'}"><div class="sgt-img"><img src="ss-quote.png" alt="Quote builder" loading="lazy"></div><div class="sgt-lbl"><b>Quote builder</b><span>Line-item quotes in minutes</span></div></div>
-<div class="sgt" data-idx="4" onclick="var lbx=document.getElementById('lbx');lbx.style.display='flex';document.body.style.overflow='hidden';for(var j=0;j<5;j++){var el=document.getElementById('lbi'+j);if(el)el.style.display=j===4?'block':'none'}"><div class="sgt-img"><img src="ss-analytics.png" alt="Analytics" loading="lazy"></div><div class="sgt-lbl"><b>Analytics</b><span>KPIs, conversion &amp; lead sources</span></div></div>
+<div class="sgt" data-idx="0" onclick="_lbOpen(0)"><div class="sgt-img"><img src="ss-dashboard.png" alt="Dashboard" loading="lazy"></div><div class="sgt-lbl"><b>Dashboard</b><span>Active jobs, pipeline &amp; revenue</span></div></div>
+<div class="sgt" data-idx="1" onclick="_lbOpen(1)"><div class="sgt-img"><img src="ss-project.png" alt="Project view" loading="lazy"></div><div class="sgt-lbl"><b>Project view</b><span>Weather alerts &amp; progress tracking</span></div></div>
+<div class="sgt" data-idx="2" onclick="_lbOpen(2)"><div class="sgt-img"><img src="ss-calendar.png" alt="Calendar" loading="lazy"></div><div class="sgt-lbl"><b>Calendar</b><span>Surveys, installs &amp; weather</span></div></div>
+<div class="sgt" data-idx="3" onclick="_lbOpen(3)"><div class="sgt-img"><img src="ss-quote.png" alt="Quote builder" loading="lazy"></div><div class="sgt-lbl"><b>Quote builder</b><span>Line-item quotes in minutes</span></div></div>
+<div class="sgt" data-idx="4" onclick="_lbOpen(4)"><div class="sgt-img"><img src="ss-analytics.png" alt="Analytics" loading="lazy"></div><div class="sgt-lbl"><b>Analytics</b><span>KPIs, conversion &amp; lead sources</span></div></div>
 </div>
 </div>
 </section>
 
 <div id="lbx" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,.93);align-items:center;justify-content:center;padding:48px">
-<div style="width:100%;max-width:1100px;position:relative;box-sizing:border-box">
+<div style="width:100%;max-width:1100px;position:relative;box-sizing:border-box;z-index:1">
 <div class="lbi" id="lbi0"><img src="ss-dashboard.png" alt="Dashboard"></div>
 <div class="lbi" id="lbi1"><img src="ss-project.png" alt="Project view"></div>
 <div class="lbi" id="lbi2"><img src="ss-calendar.png" alt="Calendar"></div>
@@ -1124,7 +1126,7 @@ With Surface Suite
 </div></div></div>
 <footer><div class="fg-foot"><div class="fb"><div class="flogo"><span>Surface Suite</span></div><p>The CRM built for UK driveway and surfacing contractors.</p></div><div class="fc"><h5>Product</h5><a onclick="window.location='features.html'">Features</a><a onclick="window.location='pricing.html'">Pricing</a></div><div class="fc"><h5>Company</h5><a onclick="window.location='contact.html'">Contact</a></div><div class="fc"><h5>Legal</h5><a>Privacy Policy</a><a>Terms of Service</a></div></div><div class="fbot"><span>© 2026 Surface Suite Ltd.</span><div style="display:flex;gap:14px"><a>Privacy</a><a>Terms</a></div></div></footer>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function go(id) {
   document.querySelectorAll('.pg').forEach(function(p) { p.classList.remove('on'); });
   var p = document.getElementById('pg-' + id);
@@ -1215,8 +1217,8 @@ function sub() {
   });
 }
 </script>
-<script defer="" src="./Surface Suite — CRM for Surfacing Contractors_files/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7f7b0fd8732c4326aae4b9d58d5c514a&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebd1131ea0378f2',t:'MTc3NjExMDUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())
+</script>
+Document||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebd1131ea0378f2',t:'MTc3NjExMDUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())
 <script>
 var _lbCur = 0;
 var _lbTotal = 5;
