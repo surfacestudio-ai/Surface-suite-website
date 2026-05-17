@@ -250,8 +250,16 @@ img{max-width:100%;display:block}
 
 /* ── METRICS ── */
 .metrics{padding:72px 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.metrics-light{background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .metrics-dark{background:var(--ink);border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden}
 .metrics-dark::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(37,99,235,.18) 0%,transparent 70%);pointer-events:none}
+.metrics-light .eyebrow{color:var(--acc)}
+.metrics-light .h2{color:var(--text)}
+.metrics-light .h2 em{color:var(--text3)}
+.metrics-light .met-n{color:var(--acc)}
+.metrics-light .met-l{color:var(--text)}
+.metrics-light .met-s{color:var(--text2)}
+.metrics-light .met{border-color:var(--border)}
 .metrics-dark .eyebrow{color:rgba(255,255,255,.3)}
 .metrics-dark .h2{color:#fff}
 .metrics-dark .h2 em{color:rgba(255,255,255,.25)}
@@ -520,6 +528,13 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 
 /* ── BLOG STRIP ── */
 .blog-strip{padding:88px 0;background:var(--surface2);border-top:1px solid var(--border)}
+.blog-strip-dark{background:var(--ink);border-color:rgba(255,255,255,.07)}
+.blog-strip-dark .h2{color:#fff}
+.blog-strip-dark .eyebrow{color:rgba(255,255,255,.3)}
+.blog-strip-dark .blog-strip-link{color:var(--acc)}
+.blog-strip-dark .blog-card{background:#1a1f2e;border-color:rgba(255,255,255,.1)}
+.blog-strip-dark .blog-card-title{color:#fff}
+.blog-strip-dark .blog-card-desc{color:rgba(255,255,255,.5)}
 .blog-strip-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;gap:16px}
 .blog-strip-head h2{margin-bottom:0}
 .blog-strip-link{font-size:14px;font-weight:600;color:var(--acc);text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:6px}
@@ -821,7 +836,7 @@ With Surface Suite
 </div>
 </div></section>
 <!-- METRICS -->
-<div class="metrics metrics-dark"><div class="w">
+<div class="metrics metrics-light"><div class="w">
 <span class="eyebrow">By the numbers</span>
 <h2 class="h2">Built around how surfacing<br>businesses <em>actually work</em></h2>
 <div class="met-grid">
@@ -832,7 +847,7 @@ With Surface Suite
 </div>
 </div></div>
 <!-- BLOG STRIP -->
-<section class="blog-strip"><div class="w">
+<section class="blog-strip blog-strip-dark"><div class="w">
 <div class="blog-strip-head">
 <div>
 <span class="eyebrow">From the blog</span>
