@@ -1203,70 +1203,19 @@ With Surface Suite
 </script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function go(id) {
-  document.querySelectorAll('.pg').forEach(function(p) { p);
+  document.querySelectorAll('.pg').forEach(function(p) { p.classList.remove('on'); });
+  var p = document.getElementById('pg-' + id);
+  if (p) p.classList.add('on');
+  window.scrollTo({top:0,behavior:'instant'});
 }
 function navGo(id) {
   go(id);
-  document.querySelectorAll('.nlk').forEach(function(l) { l);
-  var m = document.getElementById('mob-' + id);
-  if (m) m  else { menufunction tog(m) {
-  var a = m === 'a';
-  document.getElementById('tm'));
-}
-function sub() {
-  var b = document.getElementById('fsub');
-  var inputs = document.querySelectorAll('#pg-contact .fi, #pg-contact .fsel, #pg-contact .fta');
-  var firstName = inputs[0].value.trim();
-  var lastName  = inputs[1].value.trim();
-  var business  = inputs[2].value.trim();
-  var email     = inputs[3].value.trim();
-  var phone     = inputs[4].value.trim();
-  var trade     = inputs[5].value;
-  var plan      = inputs[6].value;
-  var message   = inputs[7].value.trim();
-  if (!firstName || !email) {
-    alert('Please fill in at least your first name and email address.');
-    return;
-  }
-  b.textContent = 'Sending...';
-  b.disabled = true;
-  var data = {
-    _subject: 'New Surface Suite waitlist registration — ' + firstName + ' ' + lastName,
-    'First name': firstName,
-    'Last name': lastName,
-    'Business': business,
-    'Email': email,
-    'Phone': phone,
-    'Trade': trade,
-    'Plan interest': plan,
-    'Message': message
-  };
-  fetch('https://formspree.io/f/mzdybkye', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify(data)
-  })
-  .then(function(r) {
-    if (r.ok) {
-      b.textContent = 'Request received ✓';
-      b.style.background = '#16A34A';
-      inputs.forEach(function(i) { i.value = ''; });
-    } else {
-      b.textContent = 'Something went wrong — please try again';
-      b.style.background = '#DC2626';
-      b.disabled = false;
-    }
-  })
-  .catch(function() {
-    b.textContent = 'Something went wrong — please try again';
-    b.style.background = '#DC2626';
-    b.disabled = false;
-  });
+  document.querySelectorAll('.nlk').forEach(function(l) { l.classList.remove('on'); });
+  var n = document.getElementById('nl-' + id);
+  if (n) n.classList.add('on');
 }
 </script>
-<script defer="" src="./Surface Suite — CRM for Surfacing Contractors_files/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7f7b0fd8732c4326aae4b9d58d5c514a&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous">
-}
-_ctimer=setInterval</script>
+
 <script>
 function lbOpen(n) {
   var box = document.getElementById('lbx');
