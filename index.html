@@ -535,13 +535,8 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 @media(max-width:580px){.blog-grid{grid-template-columns:1fr}.blog-strip{padding:56px 0}.blog-strip-head{flex-direction:column;align-items:flex-start;margin-bottom:28px}}
 
 /* ── LIGHTBOX ── */
-#lbOverlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,.93);align-items:center;justify-content:center;box-sizing:border-box;padding:60px}
-#lbOverlay.open{display:flex}
-.lb-content{width:100%;max-width:1100px;text-align:center;position:relative;z-index:100000}
-.lb-item{display:none;width:100%}
 .lb-item.active{display:block;width:100%}
 .lb-item img{width:100% !important;height:auto !important;max-height:75vh;object-fit:contain;border-radius:8px;display:block !important;margin:0 auto;visibility:visible !important;opacity:1 !important}
-.lb-cap{margin-top:12px;font-size:13px;color:rgba(255,255,255,.5);font-family:"Inter",sans-serif}
 .lb-cap strong{color:rgba(255,255,255,.8)}
 #lbClose{position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:18px;cursor:pointer;z-index:100000;display:flex;align-items:center;justify-content:center}
 #lbClose:hover{background:rgba(255,255,255,.3)}
@@ -550,49 +545,62 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 #lbPrev{left:16px}
 #lbNext{right:16px}
 
-@media(max-width:960px){.sg-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:960px){}
 @media(max-width:580px){
-  .hero-centered{padding-top:80px}
-  .sg-wrap{padding:0 16px}
-  .sg-grid{grid-template-columns:repeat(2,1fr);gap:8px}
-  .lb-arrow{display:none}
-}
-
-/* ── SCREENSHOT GALLERY ── */
-.sg-wrap{width:100%;background:linear-gradient(to bottom,var(--ink) 60%,var(--surface2) 100%);padding:0 32px}
-.sg-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.sg-thumb{cursor:pointer;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#1e2130;transition:all .2s;text-decoration:none;display:block}
-.sg-thumb:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.4);border-color:rgba(37,99,235,.5)}
-.sg-img-wrap{position:relative;overflow:hidden;aspect-ratio:16/10}
-.sg-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:transform .3s}
-.sg-thumb:hover .sg-img-wrap img{transform:scale(1.03)}
-.sg-overlay{position:absolute;inset:0;background:rgba(37,99,235,.0);display:flex;align-items:center;justify-content:center;transition:all .2s;opacity:0}
-.sg-thumb:hover .sg-overlay{background:rgba(37,99,235,.3);opacity:1}
-.sg-label{padding:8px 10px;background:#141720}
-.sg-label strong{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,.8);font-family:"Inter",sans-serif;margin-bottom:2px}
-.sg-label span{font-size:10px;color:rgba(255,255,255,.35);font-family:"Inter",sans-serif}
+        }
 
 /* ── CSS LIGHTBOX ── */
-.lb-target{display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;align-items:center;justify-content:center}
-.lb-target.open{display:flex}
-.lb-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);cursor:pointer;z-index:99999}
-.lb-box{position:relative;z-index:100000;width:90vw;max-width:1100px;text-align:center}
 .lb-box img{width:100%;height:auto;max-height:80vh;object-fit:contain;border-radius:8px;box-shadow:0 32px 80px rgba(0,0,0,.8);display:block;margin:0 auto}
-.lb-cap{margin-top:10px;font-size:13px;color:rgba(255,255,255,.5);font-family:"Inter",sans-serif}
 .lb-cap strong{color:rgba(255,255,255,.8)}
-.lb-close-btn{position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:16px;display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:100001;line-height:36px;text-align:center}
 .lb-close-btn:hover{background:rgba(255,255,255,.3)}
-.lb-nav{position:fixed;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:100001;line-height:44px;text-align:center}
 .lb-nav:hover{background:rgba(37,99,235,.7)}
-.lb-prev{left:16px}
-.lb-next{right:16px}
 
-@media(max-width:960px){.sg-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:960px){}
 @media(max-width:580px){
-  .sg-wrap{padding:0}
-  .sg-grid{grid-template-columns:repeat(2,1fr);gap:8px}
-  .lb-nav{display:none}
-  .lb-box{max-width:95vw}
+        }
+
+/* ── HERO ── */
+.hc{background:var(--ink);padding-top:96px;padding-bottom:0;display:flex;flex-direction:column;align-items:center}
+.hcw{max-width:720px;text-align:center;padding:0 24px 48px}
+.hcw .lead{max-width:540px;margin:0 auto 28px}
+.hca{justify-content:center}
+
+/* ── SCREENSHOT GALLERY ── */
+.sgw{width:100%;background:linear-gradient(to bottom,var(--ink) 50%,var(--surface2) 100%);padding:0 24px}
+.sgg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.sgt{border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#1e2130;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
+.sgt:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.5);border-color:rgba(37,99,235,.5)}
+.sgt-img{position:relative;aspect-ratio:16/10;overflow:hidden}
+.sgt-img img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:transform .3s}
+.sgt:hover .sgt-img img{transform:scale(1.04)}
+.sgt-ov{position:absolute;inset:0;background:rgba(37,99,235,0);transition:background .2s}
+.sgt:hover .sgt-ov{background:rgba(37,99,235,.25)}
+.sgt-lbl{padding:8px 10px;background:#141720}
+.sgt-lbl b{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,.8);font-family:"Inter",sans-serif;margin-bottom:1px;font-style:normal}
+.sgt-lbl span{font-size:10px;color:rgba(255,255,255,.35);font-family:"Inter",sans-serif}
+
+/* ── LIGHTBOX ── */
+#lbx{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center}
+#lbx.on{display:flex}
+#lbxbg{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:0;cursor:pointer}
+#lbxbox{position:relative;z-index:1;width:88vw;max-width:1100px;text-align:center}
+.lbi{display:none}
+.lbi.on{display:block}
+.lbi img{width:100%;height:auto;max-height:78vh;object-fit:contain;border-radius:8px;display:block;margin:0 auto;box-shadow:0 24px 64px rgba(0,0,0,.8)}
+#lbxcap{margin-top:10px;font-size:13px;color:rgba(255,255,255,.5);font-family:"Inter",sans-serif;min-height:20px}
+#lbxclose{position:fixed;top:16px;right:16px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#lbxclose:hover{background:rgba(255,255,255,.3)}
+#lbxprev,#lbxnext{position:fixed;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#lbxprev:hover,#lbxnext:hover{background:rgba(37,99,235,.7);border-color:transparent}
+#lbxprev{left:16px}
+#lbxnext{right:16px}
+
+@media(max-width:960px){.sgg{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:580px){
+  .hc{padding-top:80px}
+  .sgw{padding:0}
+  .sgg{grid-template-columns:repeat(2,1fr);gap:8px}
+  #lbxprev,#lbxnext{display:none}
 }
 </style>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -643,99 +651,57 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 <!-- HOME -->
 <div class="pg on" id="pg-home">
 <!-- HERO -->
-<section class="hero hero-centered">
-<div class="w" style="text-align:center;max-width:760px;margin:0 auto">
-<div class="hero-badge"><div class="hero-badge-dot"></div>Now in beta · Built for UK surfacing contractors</div>
-<h1 class="h1" style="margin-bottom:20px">Every job. Every quote.<br>Every invoice. <em>One place.</em></h1>
-<p class="lead lead-light" style="margin:0 auto 32px;max-width:560px">Surface Suite is the only CRM built for driveway and surfacing contractors. Quote faster, get paid sooner, and never miss a survey again.</p>
-<div class="hero-actions" style="justify-content:center;margin-bottom:56px">
-<button class="btn btn-blue" onclick="window.location='contact.html'">Join the waitlist <svg fill="none" height="14" viewBox="0 0 14 14" width="14"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg></button>
-<button class="btn btn-ghost" onclick="window.location='features.html'">See all features</button>
+<section class="hero hc">
+<div class="hcw">
+  <div class="hero-badge"><div class="hero-badge-dot"></div>Now in beta · Built for UK surfacing contractors</div>
+  <h1 class="h1">Every job. Every quote.<br>Every invoice. <em>One place.</em></h1>
+  <p class="lead lead-light">Surface Suite is the only CRM built for driveway and surfacing contractors. Quote faster, get paid sooner, and never miss a survey again.</p>
+  <div class="hero-actions hca">
+    <button class="btn btn-blue" onclick="window.location='contact.html'">Join the waitlist <svg fill="none" height="14" viewBox="0 0 14 14" width="14"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg></button>
+    <button class="btn btn-ghost" onclick="window.location='features.html'">See all features</button>
+  </div>
 </div>
+<div class="sgw">
+  <div class="sgg">
+<div class="sgt" data-lb="0">
+  <div class="sgt-img"><img src="ss-dashboard.png" alt="Dashboard" loading="lazy"><div class="sgt-ov"></div></div>
+  <div class="sgt-lbl"><b>Dashboard</b><span>Active jobs, pipeline &amp; revenue</span></div>
 </div>
-<div class="sg-wrap">
-<div class="sg-grid">
-<div class="sg-thumb" style="cursor:pointer" data-lb="0">
-<div class="sg-img-wrap">
-<img src="ss-dashboard.png" alt="Dashboard" loading="lazy">
-<div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="sgt" data-lb="1">
+  <div class="sgt-img"><img src="ss-project.png" alt="Project view" loading="lazy"><div class="sgt-ov"></div></div>
+  <div class="sgt-lbl"><b>Project view</b><span>Weather alerts &amp; progress tracking</span></div>
 </div>
-<div class="sg-label"><strong>Dashboard</strong><span>Active jobs, pipeline &amp; revenue</span></div>
-</a><div class="sg-thumb" style="cursor:pointer" data-lb="1">
-<div class="sg-img-wrap">
-<img src="ss-project.png" alt="Project overview" loading="lazy">
-<div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="sgt" data-lb="2">
+  <div class="sgt-img"><img src="ss-calendar.png" alt="Calendar" loading="lazy"><div class="sgt-ov"></div></div>
+  <div class="sgt-lbl"><b>Calendar</b><span>Surveys, installs &amp; weather</span></div>
 </div>
-<div class="sg-label"><strong>Project overview</strong><span>Weather alerts &amp; progress tracking</span></div>
-</a><div class="sg-thumb" style="cursor:pointer" data-lb="2">
-<div class="sg-img-wrap">
-<img src="ss-calendar.png" alt="Calendar" loading="lazy">
-<div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="sgt" data-lb="3">
+  <div class="sgt-img"><img src="ss-quote.png" alt="Quote builder" loading="lazy"><div class="sgt-ov"></div></div>
+  <div class="sgt-lbl"><b>Quote builder</b><span>Line-item quotes in minutes</span></div>
 </div>
-<div class="sg-label"><strong>Calendar</strong><span>Surveys, installs &amp; weather</span></div>
-</a><div class="sg-thumb" style="cursor:pointer" data-lb="3">
-<div class="sg-img-wrap">
-<img src="ss-quote.png" alt="Quote builder" loading="lazy">
-<div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="sgt" data-lb="4">
+  <div class="sgt-img"><img src="ss-analytics.png" alt="Analytics" loading="lazy"><div class="sgt-ov"></div></div>
+  <div class="sgt-lbl"><b>Analytics</b><span>KPIs, conversion &amp; lead sources</span></div>
 </div>
-<div class="sg-label"><strong>Quote builder</strong><span>Line-item quotes in minutes</span></div>
-</a><div class="sg-thumb" style="cursor:pointer" data-lb="4">
-<div class="sg-img-wrap">
-<img src="ss-analytics.png" alt="Analytics" loading="lazy">
-<div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-</div>
-<div class="sg-label"><strong>Analytics</strong><span>KPIs, conversion &amp; lead sources</span></div>
-</button>
-</div>
+  </div>
 </div>
 </section>
 
-<div class="lb-target" style="display:none">
-<div class="lb-bg" onclick="closeLB()"></div>
-<div class="lb-box">
-<img src="ss-dashboard.png" alt="Dashboard">
-<div class="lb-cap"><strong>Dashboard</strong> — Active jobs, pipeline &amp; revenue</div>
-<button class="lb-close-btn" onclick="closeLB()">✕</a>
-<button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8592;</button>
-<button class="lb-nav lb-next" onclick="lbNav(1)">&#8594;</button>
+<div id="lbx" aria-hidden="true">
+  <div id="lbxbg"></div>
+  <div id="lbxbox">
+<div class="lbi" data-i="0"><img src="ss-dashboard.png" alt="Dashboard"><p class="lbc"><b>Dashboard</b> — Active jobs, pipeline &amp; revenue</p></div>
+<div class="lbi" data-i="1"><img src="ss-project.png" alt="Project view"><p class="lbc"><b>Project view</b> — Weather alerts &amp; progress tracking</p></div>
+<div class="lbi" data-i="2"><img src="ss-calendar.png" alt="Calendar"><p class="lbc"><b>Calendar</b> — Surveys, installs &amp; weather</p></div>
+<div class="lbi" data-i="3"><img src="ss-quote.png" alt="Quote builder"><p class="lbc"><b>Quote builder</b> — Line-item quotes in minutes</p></div>
+<div class="lbi" data-i="4"><img src="ss-analytics.png" alt="Analytics"><p class="lbc"><b>Analytics</b> — KPIs, conversion &amp; lead sources</p></div>
+    <div id="lbxcap"></div>
+  </div>
+  <button id="lbxclose">✕</button>
+  <button id="lbxprev">&#8592;</button>
+  <button id="lbxnext">&#8594;</button>
 </div>
-</div><div class="lb-target" style="display:none">
-<div class="lb-bg" onclick="closeLB()"></div>
-<div class="lb-box">
-<img src="ss-project.png" alt="Project overview">
-<div class="lb-cap"><strong>Project overview</strong> — Weather alerts &amp; progress tracking</div>
-<button class="lb-close-btn" onclick="closeLB()">✕</a>
-<button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8592;</button>
-<button class="lb-nav lb-next" onclick="lbNav(1)">&#8594;</button>
-</div>
-</div><div class="lb-target" style="display:none">
-<div class="lb-bg" onclick="closeLB()"></div>
-<div class="lb-box">
-<img src="ss-calendar.png" alt="Calendar">
-<div class="lb-cap"><strong>Calendar</strong> — Surveys, installs &amp; weather</div>
-<button class="lb-close-btn" onclick="closeLB()">✕</a>
-<button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8592;</button>
-<button class="lb-nav lb-next" onclick="lbNav(1)">&#8594;</button>
-</div>
-</div><div class="lb-target" style="display:none">
-<div class="lb-bg" onclick="closeLB()"></div>
-<div class="lb-box">
-<img src="ss-quote.png" alt="Quote builder">
-<div class="lb-cap"><strong>Quote builder</strong> — Line-item quotes in minutes</div>
-<button class="lb-close-btn" onclick="closeLB()">✕</a>
-<button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8592;</button>
-<button class="lb-nav lb-next" onclick="lbNav(1)">&#8594;</button>
-</div>
-</div><div class="lb-target" style="display:none">
-<div class="lb-bg" onclick="closeLB()"></div>
-<div class="lb-box">
-<img src="ss-analytics.png" alt="Analytics">
-<div class="lb-cap"><strong>Analytics</strong> — KPIs, conversion &amp; lead sources</div>
-<button class="lb-close-btn" onclick="closeLB()">✕</a>
-<button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8592;</button>
-<button class="lb-nav lb-next" onclick="lbNav(1)">&#8594;</button>
-</div>
-</div>
+
 <!-- BEFORE / AFTER -->
 <section class="ba-section"><div class="w">
 <div class="ba-intro">
@@ -1237,43 +1203,15 @@ With Surface Suite
 </script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function go(id) {
-  document.querySelectorAll('.pg').forEach(function(p) { p.classList.remove('on'); });
-  var p = document.getElementById('pg-' + id);
-  if (p) p.classList.add('on');
-  window.scrollTo({top:0,behavior:'instant'});
+  document.querySelectorAll('.pg').forEach(function(p) { p);
 }
 function navGo(id) {
   go(id);
-  document.querySelectorAll('.nlk').forEach(function(l) { l.classList.remove('on'); });
-  var n = document.getElementById('nl-' + id);
-  if (n) n.classList.add('on');
-  document.querySelectorAll('.mob-nlk').forEach(function(l) { l.classList.remove('on'); });
+  document.querySelectorAll('.nlk').forEach(function(l) { l);
   var m = document.getElementById('mob-' + id);
-  if (m) m.classList.add('on');
-  closeMenu();
-}
-function toggleMenu() {
-  var menu = document.getElementById('mobile-menu');
-  var btn = document.getElementById('hamburger');
-  var isOpen = menu.classList.contains('open');
-  if (isOpen) { menu.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = ''; }
-  else { menu.classList.add('open'); btn.classList.add('open'); document.body.style.overflow = 'hidden'; }
-}
-function closeMenu() {
-  var menu = document.getElementById('mobile-menu');
-  var btn = document.getElementById('hamburger');
-  menu.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = '';
-}
-function tog(m) {
+  if (m) m  else { menufunction tog(m) {
   var a = m === 'a';
-  document.getElementById('tm').classList.toggle('on', !a);
-  document.getElementById('ta').classList.toggle('on', a);
-  document.getElementById('ps').textContent = a ? 23 : 29;
-  document.getElementById('pp2').textContent = a ? 47 : 59;
-  document.getElementById('pb').textContent = a ? 79 : 99;
-  ['s','p','b'].forEach(function(k) {
-    document.getElementById('bp' + k).textContent = a ? 'annually' : 'monthly';
-  });
+  document.getElementById('tm'));
 }
 function sub() {
   var b = document.getElementById('fsub');
@@ -1330,77 +1268,64 @@ function sub() {
 }
 _ctimer=setInterval</script>
 <script>script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebd1131ea0378f2',t:'MTc3NjExMDUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())
 
 <script>
 (function(){
-  var ci=0, ct=5, timer;
-  function goSlide(n){
-    ci=(n+ct)%ct;
-    document.querySelectorAll('.cs').forEach(function(e,i){e.style.display=i===ci?'block':'none'});
-    document.querySelectorAll('.cd').forEach(function(e,i){e.classList.toggle('active',i===ci)});
-    document.querySelectorAll('.cl').forEach(function(e,i){e.classList.toggle('active',i===ci)});
-    clearInterval(timer);
-    timer=setInterval(function(){goSlide(ci+1)},4500);
-  }
-  window.gS=goSlide;
-  document.addEventListener('DOMContentLoaded',function(){
-    goSlide(0);
-    timer=setInterval(function(){goSlide(ci+1)},4500);
-  });
-})();
-</script>
-
-<script>
-(function() {
-  // Gallery lightbox
-  var current = 0;
+  var cur = 0;
   var total = 5;
+  var captions = [
+    'Dashboard — Active jobs, pipeline &amp; revenue',
+    'Project view — Weather alerts &amp; progress tracking',
+    'Calendar — Surveys, installs &amp; weather',
+    'Quote builder — Line-item quotes in minutes',
+    'Analytics — KPIs, conversion &amp; lead sources'
+  ];
 
-  function showLB(n) {
-    // Hide all
-    var targets = document.querySelectorAll('.lb-target');
-    for (var i = 0; i < targets.length; i++) {
-      targets[i].classList.remove('open');
-      targets[i].style.display = 'none';
+  function show(n) {
+    cur = ((n % total) + total) % total;
+    var items = document.querySelectorAll('.lbi');
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.toggle('on', i === cur);
     }
-    // Show selected
-    current = ((n % total) + total) % total;
-    targets[current].classList.add('open');
-    targets[current].style.display = 'block';
+    var cap = document.getElementById('lbxcap');
+    if (cap) cap.innerHTML = captions[cur];
+  }
+
+  function open(n) {
+    show(n);
+    document.getElementById('lbx').classList.add('on');
     document.body.style.overflow = 'hidden';
   }
 
-  window.closeLB = function() {
-    var targets = document.querySelectorAll('.lb-target');
-    for (var i = 0; i < targets.length; i++) {
-      targets[i].classList.remove('open');
-      targets[i].style.display = 'none';
-    }
+  function close() {
+    document.getElementById('lbx').classList.remove('on');
     document.body.style.overflow = '';
-  };
+  }
 
-  window.lbNav = function(dir) {
-    showLB(current + dir);
-  };
-
-  // Attach click to thumbnails
   document.addEventListener('DOMContentLoaded', function() {
-    var thumbs = document.querySelectorAll('[data-lb]');
+    // Attach thumb clicks
+    var thumbs = document.querySelectorAll('.sgt');
     for (var i = 0; i < thumbs.length; i++) {
-      (function(idx) {
-        thumbs[idx].addEventListener('click', function() { showLB(idx); });
-      })(i);
+      (function(idx){ thumbs[idx].addEventListener('click', function(){ open(idx); }); })(i);
     }
-  });
-
-  // Keyboard
-  document.addEventListener('keydown', function(e) {
-    var open = document.querySelector('.lb-target.open');
-    if (!open) return;
-    if (e.key === 'Escape') window.closeLB();
-    if (e.key === 'ArrowRight') window.lbNav(1);
-    if (e.key === 'ArrowLeft') window.lbNav(-1);
+    // Background click closes
+    var bg = document.getElementById('lbxbg');
+    if (bg) bg.addEventListener('click', close);
+    // Close button
+    var cl = document.getElementById('lbxclose');
+    if (cl) cl.addEventListener('click', close);
+    // Prev/next
+    var pv = document.getElementById('lbxprev');
+    var nx = document.getElementById('lbxnext');
+    if (pv) pv.addEventListener('click', function(){ show(cur - 1); });
+    if (nx) nx.addEventListener('click', function(){ show(cur + 1); });
+    // Keyboard
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lbx').classList.contains('on')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(cur - 1);
+      if (e.key === 'ArrowRight') show(cur + 1);
+    });
   });
 })();
 </script>
