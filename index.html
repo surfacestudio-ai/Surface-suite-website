@@ -583,7 +583,7 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 #lbx{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;display:none;align-items:center;justify-content:center;box-sizing:border-box}
 #lbx.on{display:flex}
 #lbxbg{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);cursor:pointer}
-#lbxbox{position:relative;z-index:1;width:88vw;max-width:1100px;text-align:center;pointer-events:none}
+#lbxbox{position:relative;z-index:1;width:88vw;max-width:1100px;text-align:center}
 .lbi{display:none}
 .lbi{pointer-events:auto}
 .lbi img{width:100%;height:auto;max-height:78vh;object-fit:contain;border-radius:8px;display:block;margin:0 auto;box-shadow:0 24px 64px rgba(0,0,0,.8)}
@@ -1270,7 +1270,7 @@ _ctimer=setInterval</script>
 <script>
 function lbOpen(n) {
   var box = document.getElementById('lbx');
-  box.style.display = 'flex';
+  box.style.cssText = 'display:flex;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;align-items:center;justify-content:center;box-sizing:border-box;padding:60px';
   document.body.style.overflow = 'hidden';
   var items = document.querySelectorAll('.lbi');
   for (var i = 0; i < items.length; i++) {
