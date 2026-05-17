@@ -661,31 +661,31 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 </div>
 <div class="sg-wrap">
 <div class="sg-grid">
-<div class="sg-thumb" onclick="openLB(0)">
+<div class="sg-thumb" data-lb="0">
 <div class="sg-img-wrap">
 <img src="ss-dashboard.png" alt="Dashboard" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Dashboard</strong><span>Active jobs, pipeline &amp; revenue</span></div>
-</div><div class="sg-thumb" onclick="openLB(1)">
+</div><div class="sg-thumb" data-lb="1">
 <div class="sg-img-wrap">
 <img src="ss-project.png" alt="Project overview" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Project overview</strong><span>Weather alerts &amp; progress tracking</span></div>
-</div><div class="sg-thumb" onclick="openLB(2)">
+</div><div class="sg-thumb" data-lb="2">
 <div class="sg-img-wrap">
 <img src="ss-calendar.png" alt="Calendar" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Calendar</strong><span>Surveys, installs &amp; weather</span></div>
-</div><div class="sg-thumb" onclick="openLB(3)">
+</div><div class="sg-thumb" data-lb="3">
 <div class="sg-img-wrap">
 <img src="ss-quote.png" alt="Quote builder" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Quote builder</strong><span>Line-item quotes in minutes</span></div>
-</div><div class="sg-thumb" onclick="openLB(4)">
+</div><div class="sg-thumb" data-lb="4">
 <div class="sg-img-wrap">
 <img src="ss-analytics.png" alt="Analytics" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -1222,6 +1222,11 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowRight') lbNav(1);
   if (e.key === 'ArrowLeft') lbNav(-1);
 });
+document.addEventListener('click', function(e) {
+  var thumb = e.target.closest('[data-lb]');
+  if (thumb) openLB(parseInt(thumb.getAttribute('data-lb')));
+});
+
 </script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function go(id) {
