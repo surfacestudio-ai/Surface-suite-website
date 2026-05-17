@@ -534,49 +534,6 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 @media(max-width:760px){.blog-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:580px){.blog-grid{grid-template-columns:1fr}.blog-strip{padding:56px 0}.blog-strip-head{flex-direction:column;align-items:flex-start;margin-bottom:28px}}
 
-/* ── HERO CENTERED ── */
-.hero-centered{padding-top:100px;padding-bottom:0;display:flex;flex-direction:column;align-items:center;background:var(--ink)}
-.hero-screenshot-wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 32px}
-.hero-screenshot-frame{background:#1e2130;border:1px solid rgba(255,255,255,.12);border-radius:12px 12px 0 0;overflow:hidden;box-shadow:0 -8px 60px rgba(0,0,0,.4)}
-.hsf-bar{background:#141720;padding:10px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,.08)}
-.hsf-dots{display:flex;gap:6px}
-.hsf-dots span{width:10px;height:10px;border-radius:50%}
-.hsf-dots span:nth-child(1){background:#FF5F57}
-.hsf-dots span:nth-child(2){background:#FEBC2E}
-.hsf-dots span:nth-child(3){background:#28C840}
-.hsf-url{flex:1;text-align:center;font-size:11px;color:rgba(255,255,255,.25);font-family:'Inter',sans-serif}
-.hero-carousel-track{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden}
-.cs{display:none;width:100%;height:100%}
-.cs.active{display:block}
-.cs img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
-.hero-carousel-nav{padding:10px 16px;background:#141720;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;gap:16px}
-.hero-carousel-dots{display:flex;gap:6px;align-items:center}
-.cd{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;padding:0;transition:all .2s}
-.cd.active{background:#2563EB;width:20px;border-radius:3px}
-.hero-carousel-labels{font-size:11px;color:rgba(255,255,255,.35);font-family:'Inter',sans-serif}
-.cl{display:none}
-.cl.active{display:inline}
-@media(max-width:580px){
-  .hero-centered{padding-top:80px}
-  .hero-screenshot-wrap{padding:0}
-  .hero-screenshot-frame{border-radius:0;border-left:none;border-right:none}
-}
-
-/* ── HERO CENTERED ── */
-.hero-centered{padding-top:100px;padding-bottom:0;display:flex;flex-direction:column;align-items:center;background:var(--ink)}
-.sg-wrap{width:100%;background:linear-gradient(to bottom,var(--ink) 0%,var(--surface2) 100%);padding:0 32px 0}
-.sg-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding-bottom:0}
-.sg-thumb{cursor:pointer;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#1e2130;transition:all .2s}
-.sg-thumb:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.4);border-color:rgba(37,99,235,.5)}
-.sg-img-wrap{position:relative;overflow:hidden;aspect-ratio:16/10}
-.sg-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:transform .3s}
-.sg-thumb:hover .sg-img-wrap img{transform:scale(1.03)}
-.sg-overlay{position:absolute;inset:0;background:rgba(37,99,235,.0);display:flex;align-items:center;justify-content:center;transition:all .2s;opacity:0}
-.sg-thumb:hover .sg-overlay{background:rgba(37,99,235,.3);opacity:1}
-.sg-label{padding:8px 10px;background:#141720}
-.sg-label strong{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,.8);font-family:"Inter",sans-serif;margin-bottom:2px}
-.sg-label span{font-size:10px;color:rgba(255,255,255,.35);font-family:"Inter",sans-serif}
-
 /* ── LIGHTBOX ── */
 #lbOverlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,.93);align-items:center;justify-content:center;box-sizing:border-box;padding:60px}
 #lbOverlay.open{display:flex}
@@ -599,6 +556,43 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
   .sg-wrap{padding:0 16px}
   .sg-grid{grid-template-columns:repeat(2,1fr);gap:8px}
   .lb-arrow{display:none}
+}
+
+/* ── SCREENSHOT GALLERY ── */
+.sg-wrap{width:100%;background:linear-gradient(to bottom,var(--ink) 60%,var(--surface2) 100%);padding:0 32px}
+.sg-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.sg-thumb{cursor:pointer;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#1e2130;transition:all .2s;text-decoration:none;display:block}
+.sg-thumb:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.4);border-color:rgba(37,99,235,.5)}
+.sg-img-wrap{position:relative;overflow:hidden;aspect-ratio:16/10}
+.sg-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:transform .3s}
+.sg-thumb:hover .sg-img-wrap img{transform:scale(1.03)}
+.sg-overlay{position:absolute;inset:0;background:rgba(37,99,235,.0);display:flex;align-items:center;justify-content:center;transition:all .2s;opacity:0}
+.sg-thumb:hover .sg-overlay{background:rgba(37,99,235,.3);opacity:1}
+.sg-label{padding:8px 10px;background:#141720}
+.sg-label strong{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,.8);font-family:"Inter",sans-serif;margin-bottom:2px}
+.sg-label span{font-size:10px;color:rgba(255,255,255,.35);font-family:"Inter",sans-serif}
+
+/* ── CSS LIGHTBOX ── */
+.lb-target{display:none;position:fixed;inset:0;z-index:99999}
+.lb-target:target{display:block}
+.lb-bg{position:fixed;inset:0;background:rgba(0,0,0,.92);display:block}
+.lb-box{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);max-width:90vw;width:1100px;z-index:100000;text-align:center}
+.lb-box img{width:100%;height:auto;max-height:78vh;object-fit:contain;border-radius:8px;box-shadow:0 32px 80px rgba(0,0,0,.8);display:block;margin:0 auto}
+.lb-cap{margin-top:10px;font-size:13px;color:rgba(255,255,255,.5);font-family:"Inter",sans-serif}
+.lb-cap strong{color:rgba(255,255,255,.8)}
+.lb-close-btn{position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:16px;display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:100001;line-height:36px;text-align:center}
+.lb-close-btn:hover{background:rgba(255,255,255,.3)}
+.lb-nav{position:fixed;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:100001;line-height:44px;text-align:center}
+.lb-nav:hover{background:rgba(37,99,235,.7)}
+.lb-prev{left:16px}
+.lb-next{right:16px}
+
+@media(max-width:960px){.sg-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:580px){
+  .sg-wrap{padding:0}
+  .sg-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .lb-nav{display:none}
+  .lb-box{max-width:95vw}
 }
 </style>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -661,41 +655,87 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 </div>
 <div class="sg-wrap">
 <div class="sg-grid">
-<div class="sg-thumb" data-lb="0">
+<a href="#lb0" class="sg-thumb">
 <div class="sg-img-wrap">
 <img src="ss-dashboard.png" alt="Dashboard" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Dashboard</strong><span>Active jobs, pipeline &amp; revenue</span></div>
-</div><div class="sg-thumb" data-lb="1">
+</a><a href="#lb1" class="sg-thumb">
 <div class="sg-img-wrap">
 <img src="ss-project.png" alt="Project overview" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Project overview</strong><span>Weather alerts &amp; progress tracking</span></div>
-</div><div class="sg-thumb" data-lb="2">
+</a><a href="#lb2" class="sg-thumb">
 <div class="sg-img-wrap">
 <img src="ss-calendar.png" alt="Calendar" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Calendar</strong><span>Surveys, installs &amp; weather</span></div>
-</div><div class="sg-thumb" data-lb="3">
+</a><a href="#lb3" class="sg-thumb">
 <div class="sg-img-wrap">
 <img src="ss-quote.png" alt="Quote builder" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Quote builder</strong><span>Line-item quotes in minutes</span></div>
-</div><div class="sg-thumb" data-lb="4">
+</a><a href="#lb4" class="sg-thumb">
 <div class="sg-img-wrap">
 <img src="ss-analytics.png" alt="Analytics" loading="lazy">
 <div class="sg-overlay"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H3v5M17 3h-5M3 12v5h5M12 17h5v-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <div class="sg-label"><strong>Analytics</strong><span>KPIs, conversion &amp; lead sources</span></div>
-</div>
+</a>
 </div>
 </div>
 </section>
 
+<div id="lb0" class="lb-target">
+<a href="#!" class="lb-bg"></a>
+<div class="lb-box">
+<img src="ss-dashboard.png" alt="Dashboard">
+<div class="lb-cap"><strong>Dashboard</strong> — Active jobs, pipeline &amp; revenue</div>
+<a href="#!" class="lb-close-btn">✕</a>
+<a href="#lb4" class="lb-nav lb-prev">&#8592;</a>
+<a href="#lb1" class="lb-nav lb-next">&#8594;</a>
+</div>
+</div><div id="lb1" class="lb-target">
+<a href="#!" class="lb-bg"></a>
+<div class="lb-box">
+<img src="ss-project.png" alt="Project overview">
+<div class="lb-cap"><strong>Project overview</strong> — Weather alerts &amp; progress tracking</div>
+<a href="#!" class="lb-close-btn">✕</a>
+<a href="#lb0" class="lb-nav lb-prev">&#8592;</a>
+<a href="#lb2" class="lb-nav lb-next">&#8594;</a>
+</div>
+</div><div id="lb2" class="lb-target">
+<a href="#!" class="lb-bg"></a>
+<div class="lb-box">
+<img src="ss-calendar.png" alt="Calendar">
+<div class="lb-cap"><strong>Calendar</strong> — Surveys, installs &amp; weather</div>
+<a href="#!" class="lb-close-btn">✕</a>
+<a href="#lb1" class="lb-nav lb-prev">&#8592;</a>
+<a href="#lb3" class="lb-nav lb-next">&#8594;</a>
+</div>
+</div><div id="lb3" class="lb-target">
+<a href="#!" class="lb-bg"></a>
+<div class="lb-box">
+<img src="ss-quote.png" alt="Quote builder">
+<div class="lb-cap"><strong>Quote builder</strong> — Line-item quotes in minutes</div>
+<a href="#!" class="lb-close-btn">✕</a>
+<a href="#lb2" class="lb-nav lb-prev">&#8592;</a>
+<a href="#lb4" class="lb-nav lb-next">&#8594;</a>
+</div>
+</div><div id="lb4" class="lb-target">
+<a href="#!" class="lb-bg"></a>
+<div class="lb-box">
+<img src="ss-analytics.png" alt="Analytics">
+<div class="lb-cap"><strong>Analytics</strong> — KPIs, conversion &amp; lead sources</div>
+<a href="#!" class="lb-close-btn">✕</a>
+<a href="#lb3" class="lb-nav lb-prev">&#8592;</a>
+<a href="#lb0" class="lb-nav lb-next">&#8594;</a>
+</div>
+</div>
 <!-- BEFORE / AFTER -->
 <section class="ba-section"><div class="w">
 <div class="ba-intro">
@@ -1194,39 +1234,6 @@ With Surface Suite
 </div>
 <script>
 
-var _lbIdx = 0;
-var _lbTotal = 5;
-function openLB(n) {
-  _lbIdx = n;
-  var items = document.querySelectorAll('.lb-item');
-  for (var i = 0; i < items.length; i++) {
-    items[i].classList.toggle('active', i === n);
-  }
-  document.getElementById('lbOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLB() {
-  document.getElementById('lbOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function lbNav(dir) {
-  _lbIdx = ((_lbIdx + dir) + _lbTotal) % _lbTotal;
-  var items = document.querySelectorAll('.lb-item');
-  for (var i = 0; i < items.length; i++) {
-    items[i].classList.toggle('active', i === _lbIdx);
-  }
-}
-document.addEventListener('keydown', function(e) {
-  if (!document.getElementById('lbOverlay').classList.contains('open')) return;
-  if (e.key === 'Escape') closeLB();
-  if (e.key === 'ArrowRight') lbNav(1);
-  if (e.key === 'ArrowLeft') lbNav(-1);
-});
-document.addEventListener('click', function(e) {
-  var thumb = e.target.closest('[data-lb]');
-  if (thumb) openLB(parseInt(thumb.getAttribute('data-lb')));
-});
-
 </script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function go(id) {
@@ -1324,15 +1331,7 @@ function sub() {
 _ctimer=setInterval</script>
 <script>script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebd1131ea0378f2',t:'MTc3NjExMDUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())
-<!-- LIGHTBOX -->
-<div id="lbOverlay" onclick="closeLB()">
-<button id="lbClose" onclick="event.stopPropagation();closeLB()">✕</button>
-<button id="lbPrev" onclick="event.stopPropagation();lbNav(-1)">&#8592;</button>
-<button id="lbNext" onclick="event.stopPropagation();lbNav(1)">&#8594;</button>
-<div class="lb-content" onclick="event.stopPropagation()">
-<div class="lb-item" data-idx="0"><img src="ss-dashboard.png" alt="Dashboard"><div class="lb-cap"><strong>Dashboard</strong> — Active jobs, pipeline &amp; revenue</div></div><div class="lb-item" data-idx="1"><img src="ss-project.png" alt="Project overview"><div class="lb-cap"><strong>Project overview</strong> — Weather alerts &amp; progress tracking</div></div><div class="lb-item" data-idx="2"><img src="ss-calendar.png" alt="Calendar"><div class="lb-cap"><strong>Calendar</strong> — Surveys, installs &amp; weather</div></div><div class="lb-item" data-idx="3"><img src="ss-quote.png" alt="Quote builder"><div class="lb-cap"><strong>Quote builder</strong> — Line-item quotes in minutes</div></div><div class="lb-item" data-idx="4"><img src="ss-analytics.png" alt="Analytics"><div class="lb-cap"><strong>Analytics</strong> — KPIs, conversion &amp; lead sources</div></div>
-</div>
-</div>
+
 <script>
 (function(){
   var ci=0, ct=5, timer;
