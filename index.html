@@ -1207,23 +1207,23 @@ var _lbTotal = 5;
 function openLB(n) {
   _lbIdx = n;
   var overlay = document.getElementById('lbOverlay');
-  var items = overlay.querySelectorAll('.lb-item');
+  overlay.style.cssText = 'display:flex!important;position:fixed;inset:0;top:0;left:0;right:0;bottom:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:40px 80px;box-sizing:border-box';
+  var items = document.querySelectorAll('.lb-item');
   for (var i = 0; i < items.length; i++) {
-    items[i].classList.toggle('active', i === _lbIdx);
+    items[i].style.display = (i === _lbIdx) ? 'block' : 'none';
   }
-  overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 function closeLB() {
-  document.getElementById('lbOverlay').classList.remove('open');
+  var overlay = document.getElementById('lbOverlay');
+  overlay.style.display = 'none';
   document.body.style.overflow = '';
 }
 function lbNav(dir) {
   _lbIdx = ((_lbIdx + dir) + _lbTotal) % _lbTotal;
-  var overlay = document.getElementById('lbOverlay');
-  var items = overlay.querySelectorAll('.lb-item');
+  var items = document.querySelectorAll('.lb-item');
   for (var i = 0; i < items.length; i++) {
-    items[i].classList.toggle('active', i === _lbIdx);
+    items[i].style.display = (i === _lbIdx) ? 'block' : 'none';
   }
 }
 document.addEventListener('keydown', function(e) {
