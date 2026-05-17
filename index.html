@@ -580,10 +580,10 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 /* ── LIGHTBOX ── */
 #lbOverlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,.93);align-items:center;justify-content:center;box-sizing:border-box;padding:60px}
 #lbOverlay.open{display:flex}
-.lb-content{width:100%;max-width:1100px;text-align:center}
-.lb-item{display:none}
-.lb-item.active{display:block}
-.lb-item img{width:100%;height:auto;max-height:75vh;object-fit:contain;border-radius:8px;display:block;margin:0 auto}
+.lb-content{width:100%;max-width:1100px;text-align:center;position:relative;z-index:100000}
+.lb-item{display:none;width:100%}
+.lb-item.active{display:block;width:100%}
+.lb-item img{width:100% !important;height:auto !important;max-height:75vh;object-fit:contain;border-radius:8px;display:block !important;margin:0 auto;visibility:visible !important;opacity:1 !important}
 .lb-cap{margin-top:12px;font-size:13px;color:rgba(255,255,255,.5);font-family:"Inter",sans-serif}
 .lb-cap strong{color:rgba(255,255,255,.8)}
 #lbClose{position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:18px;cursor:pointer;z-index:100000;display:flex;align-items:center;justify-content:center}
@@ -696,15 +696,6 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 </div>
 </section>
 
-<!-- LIGHTBOX -->
-<div id="lbOverlay" onclick="closeLB()">
-<button id="lbClose" onclick="event.stopPropagation();closeLB()">✕</button>
-<button id="lbPrev" onclick="event.stopPropagation();lbNav(-1)">&#8592;</button>
-<button id="lbNext" onclick="event.stopPropagation();lbNav(1)">&#8594;</button>
-<div class="lb-content" onclick="event.stopPropagation()">
-<div class="lb-item" data-idx="0"><img src="ss-dashboard.png" alt="Dashboard"><div class="lb-cap"><strong>Dashboard</strong> — Active jobs, pipeline &amp; revenue</div></div><div class="lb-item" data-idx="1"><img src="ss-project.png" alt="Project overview"><div class="lb-cap"><strong>Project overview</strong> — Weather alerts &amp; progress tracking</div></div><div class="lb-item" data-idx="2"><img src="ss-calendar.png" alt="Calendar"><div class="lb-cap"><strong>Calendar</strong> — Surveys, installs &amp; weather</div></div><div class="lb-item" data-idx="3"><img src="ss-quote.png" alt="Quote builder"><div class="lb-cap"><strong>Quote builder</strong> — Line-item quotes in minutes</div></div><div class="lb-item" data-idx="4"><img src="ss-analytics.png" alt="Analytics"><div class="lb-cap"><strong>Analytics</strong> — KPIs, conversion &amp; lead sources</div></div>
-</div>
-</div>
 <!-- BEFORE / AFTER -->
 <section class="ba-section"><div class="w">
 <div class="ba-intro">
@@ -1327,7 +1318,17 @@ function sub() {
 }
 _ctimer=setInterval</script>
 <script>script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebd1131ea0378f2',t:'MTc3NjExMDUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())<script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebd1131ea0378f2',t:'MTc3NjExMDUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())
+<!-- LIGHTBOX -->
+<div id="lbOverlay" onclick="closeLB()">
+<button id="lbClose" onclick="event.stopPropagation();closeLB()">✕</button>
+<button id="lbPrev" onclick="event.stopPropagation();lbNav(-1)">&#8592;</button>
+<button id="lbNext" onclick="event.stopPropagation();lbNav(1)">&#8594;</button>
+<div class="lb-content" onclick="event.stopPropagation()">
+<div class="lb-item" data-idx="0"><img src="ss-dashboard.png" alt="Dashboard"><div class="lb-cap"><strong>Dashboard</strong> — Active jobs, pipeline &amp; revenue</div></div><div class="lb-item" data-idx="1"><img src="ss-project.png" alt="Project overview"><div class="lb-cap"><strong>Project overview</strong> — Weather alerts &amp; progress tracking</div></div><div class="lb-item" data-idx="2"><img src="ss-calendar.png" alt="Calendar"><div class="lb-cap"><strong>Calendar</strong> — Surveys, installs &amp; weather</div></div><div class="lb-item" data-idx="3"><img src="ss-quote.png" alt="Quote builder"><div class="lb-cap"><strong>Quote builder</strong> — Line-item quotes in minutes</div></div><div class="lb-item" data-idx="4"><img src="ss-analytics.png" alt="Analytics"><div class="lb-cap"><strong>Analytics</strong> — KPIs, conversion &amp; lead sources</div></div>
+</div>
+</div>
+<script>
 (function(){
   var ci=0, ct=5, timer;
   function goSlide(n){
