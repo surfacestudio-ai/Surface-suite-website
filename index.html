@@ -541,7 +541,6 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 .sgt-lbl{padding:8px 10px;background:#141720}
 .sgt-lbl b{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,.8);font-family:"Inter",sans-serif;margin-bottom:1px;font-style:normal}
 .sgt-lbl span{font-size:10px;color:rgba(255,255,255,.35);font-family:"Inter",sans-serif}
-.lbi{display:none}
 .lbi img{width:100% !important;height:auto !important;max-height:82vh;object-fit:contain;border-radius:8px;display:block !important;margin:0 auto;visibility:visible !important}
 @media(max-width:960px){#sgg{grid-template-columns:repeat(3,1fr) !important}}
 @media(max-width:580px){#sgg{grid-template-columns:repeat(2,1fr) !important;gap:8px !important}#lbprev,#lbnext{display:none}}
@@ -619,11 +618,11 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 
 <div id="lbx" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,.93);align-items:center;justify-content:center;padding:48px">
 <div style="width:100%;max-width:1100px;position:relative;box-sizing:border-box;z-index:1">
-<div class="lbi" id="lbi0"><img src="ss-dashboard.png" alt="Dashboard"></div>
-<div class="lbi" id="lbi1"><img src="ss-project.png" alt="Project view"></div>
-<div class="lbi" id="lbi2"><img src="ss-calendar.png" alt="Calendar"></div>
-<div class="lbi" id="lbi3"><img src="ss-quote.png" alt="Quote builder"></div>
-<div class="lbi" id="lbi4"><img src="ss-analytics.png" alt="Analytics"></div>
+<div class="lbi" id="lbi0" style="display:none"><img src="ss-dashboard.png" alt="Dashboard"></div>
+<div class="lbi" id="lbi1" style="display:none"><img src="ss-project.png" alt="Project view"></div>
+<div class="lbi" id="lbi2" style="display:none"><img src="ss-calendar.png" alt="Calendar"></div>
+<div class="lbi" id="lbi3" style="display:none"><img src="ss-quote.png" alt="Quote builder"></div>
+<div class="lbi" id="lbi4" style="display:none"><img src="ss-analytics.png" alt="Analytics"></div>
 </div>
 <button onclick="document.getElementById('lbx').style.display='none';document.body.style.overflow=''" style="position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:none;color:#fff;font-size:16px;cursor:pointer;z-index:100000">&#10005;</button>
 <button id="lbprev" style="position:fixed;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;cursor:pointer;z-index:100000">&#8592;</button>
