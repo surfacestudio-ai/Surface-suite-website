@@ -1123,7 +1123,7 @@ With Surface Suite
 </div></div></div>
 <footer><div class="fg-foot"><div class="fb"><div class="flogo"><span>Surface Suite</span></div><p>The CRM built for UK driveway and surfacing contractors.</p></div><div class="fc"><h5>Product</h5><a onclick="window.location='features.html'">Features</a><a onclick="window.location='pricing.html'">Pricing</a></div><div class="fc"><h5>Company</h5><a onclick="window.location='contact.html'">Contact</a></div><div class="fc"><h5>Legal</h5><a>Privacy Policy</a><a>Terms of Service</a></div></div><div class="fbot"><span>© 2026 Surface Suite Ltd.</span><div style="display:flex;gap:14px"><a>Privacy</a><a>Terms</a></div></div></footer>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function go(id) {
   document.querySelectorAll('.pg').forEach(function(p) { p.classList.remove('on'); });
   var p = document.getElementById('pg-' + id);
@@ -1214,14 +1214,30 @@ function sub() {
   });
 }
 </script>
-<script defer="" src="./Surface Suite — CRM for Surfacing Contractors_files/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7f7b0fd8732c4326aae4b9d58d5c514a&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebd1131ea0378f2',t:'MTc3NjExMDUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c()
+</script>
 
-<div id="lbx" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,.93)">
-<img id="lbimg" src="" alt="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:90%;max-height:90vh;border-radius:8px;box-shadow:0 24px 64px rgba(0,0,0,.8)">
-<button onclick="document.getElementById('lbx').style.display='none';document.body.style.overflow=''" style="position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:none;color:#fff;font-size:18px;cursor:pointer;z-index:100000;line-height:1">&#10005;</button>
-<button onclick="document.getElementById('lbx').style.display='none';document.body.style.overflow=''" style="position:fixed;inset:0;width:100%;height:100%;background:transparent;border:none;cursor:pointer;z-index:99998"></button>
-<button id="lbprev" onclick="_lbNav(-1)" style="position:fixed;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;cursor:pointer;z-index:100000">&#8592;</button>
-<button id="lbnext" onclick="_lbNav(1)" style="position:fixed;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;cursor:pointer;z-index:100000">&#8594;</button>
-</div>
+<script>
+var _lbCur = 0;
+var _lbSrcs = ["ss-dashboard.png","ss-project.png","ss-calendar.png","ss-quote.png","ss-analytics.png"];
+
+function _lbOpen(n) {
+    _lbCur = n;
+    document.getElementById("lbimg").src = _lbSrcs[_lbCur];
+    document.getElementById("lbx").style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+function _lbNav(dir) {
+    _lbCur = ((_lbCur + dir) + _lbSrcs.length) % _lbSrcs.length;
+    document.getElementById("lbimg").src = _lbSrcs[_lbCur];
+}
+
+document.addEventListener("keydown", function(e) {
+    var lbx = document.getElementById("lbx");
+    if (!lbx || lbx.style.display !== "block") return;
+    if (e.key === "Escape") { lbx.style.display = "none"; document.body.style.overflow = ""; }
+    if (e.key === "ArrowRight") _lbNav(1);
+    if (e.key === "ArrowLeft") _lbNav(-1);
+});
+</script>
 )
