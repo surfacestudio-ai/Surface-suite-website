@@ -592,7 +592,7 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 <div class="pp-cw"><div class="w">
 <div class="pp-cards"><div class="ppc">
 <div class="ppc-plan">Starter</div>
-<div class="ppc-price"><span class="ppc-cr">£</span><span class="ppc-num">39</span></div>
+<div class="ppc-price"><span class="ppc-cr">£</span><span class="ppc-num" id="price-starter">39</span></div>
 <div class="ppc-per">per month after beta</div>
 <div class="ppc-beta">Free during beta &mdash; full Business access</div>
 <div class="ppc-div"></div>
@@ -614,7 +614,7 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 <div class="ppc ft">
 <div class="ppc-badge">Most popular</div>
 <div class="ppc-plan">Pro</div>
-<div class="ppc-price"><span class="ppc-cr">£</span><span class="ppc-num">59</span></div>
+<div class="ppc-price"><span class="ppc-cr">£</span><span class="ppc-num" id="price-pro">59</span></div>
 <div class="ppc-per">per month after beta</div>
 <div class="ppc-beta">Free during beta &mdash; full Business access</div>
 <div class="ppc-div"></div>
@@ -638,7 +638,7 @@ footer{background:var(--ink);padding:52px 24px 28px;border-top:1px solid rgba(25
 
 <div class="ppc">
 <div class="ppc-plan">Business</div>
-<div class="ppc-price"><span class="ppc-cr">£</span><span class="ppc-num">89</span></div>
+<div class="ppc-price"><span class="ppc-cr">£</span><span class="ppc-num" id="price-biz">89</span></div>
 <div class="ppc-per">per month after beta</div>
 <div class="ppc-beta">Free during beta &mdash; full Business access</div>
 <div class="ppc-div"></div>
@@ -680,15 +680,10 @@ function tog(t) {
   var m = t === 'm';
   document.getElementById('tm').classList.toggle('on', m);
   document.getElementById('ta').classList.toggle('on', !m);
-  var prices = {ps:[29,23],pp2:[59,47],pb:[99,79]};
-  var labels = {bps:['monthly','annually'],bpp:['monthly','annually'],bpb:['monthly','annually']};
+  var prices = {'price-starter': m ? 39 : 31, 'price-pro': m ? 59 : 47, 'price-biz': m ? 89 : 71};
   Object.keys(prices).forEach(function(id) {
     var el = document.getElementById(id);
-    if(el) el.textContent = prices[id][m?0:1];
-  });
-  Object.keys(labels).forEach(function(id) {
-    var el = document.getElementById(id);
-    if(el) el.textContent = labels[id][m?0:1];
+    if (el) el.textContent = prices[id];
   });
 }
 </script>
